@@ -194,53 +194,53 @@ export const CashManagementView: React.FC = () => {
               <div className="text-xs text-slate-500 font-medium mt-1.5">Chamber 121 Cash Drawer</div>
             </div>
 
-            <div className="p-4 rounded-xl bg-blue-50/60 border border-blue-100/90 shadow-2xs">
-              <div className="flex items-center justify-between text-xs text-slate-500 mb-1.5">
-                <span className="font-semibold text-slate-700">HBL Bank Current Account</span>
-                <span className="text-[11px] text-blue-600 font-bold uppercase tracking-wider bg-blue-100/60 px-2 py-0.5 rounded">Online</span>
+            <div className="p-4 rounded-xl bg-blue-50/60 dark:bg-blue-950/20 border border-blue-100/90 dark:border-blue-900/40 shadow-2xs">
+              <div className="flex items-center justify-between text-xs text-slate-500 dark:text-slate-400 mb-1.5">
+                <span className="font-semibold text-slate-700 dark:text-slate-300">HBL Bank Current Account</span>
+                <span className="text-[11px] text-blue-600 dark:text-blue-400 font-bold uppercase tracking-wider bg-blue-100/60 dark:bg-blue-950/50 px-2 py-0.5 rounded">Online</span>
               </div>
-              <div className="text-2xl font-bold text-slate-900 font-mono">
+              <div className="text-2xl font-bold text-slate-900 dark:text-slate-100 font-mono">
                 Rs. {accountBalances.bankAccount.toLocaleString()}
               </div>
-              <div className="text-xs text-slate-500 font-medium mt-1.5">Title: CH Composing & Tax Advisor</div>
+              <div className="text-xs text-slate-500 dark:text-slate-400 font-medium mt-1.5">Title: CH Composing & Tax Advisor</div>
             </div>
 
-            <div className="p-4 rounded-xl bg-amber-50/60 border border-amber-100/90 shadow-2xs">
-              <div className="flex items-center justify-between text-xs text-slate-500 mb-1.5">
-                <span className="font-semibold text-slate-700">JazzCash Merchant Wallet</span>
-                <span className="text-[11px] text-amber-700 font-bold uppercase tracking-wider bg-amber-100/60 px-2 py-0.5 rounded">Mobile</span>
+            <div className="p-4 rounded-xl bg-amber-50/60 dark:bg-amber-950/20 border border-amber-100/90 dark:border-amber-900/40 shadow-2xs">
+              <div className="flex items-center justify-between text-xs text-slate-500 dark:text-slate-400 mb-1.5">
+                <span className="font-semibold text-slate-700 dark:text-slate-300">JazzCash Merchant Wallet</span>
+                <span className="text-[11px] text-amber-700 dark:text-amber-400 font-bold uppercase tracking-wider bg-amber-100/60 dark:bg-amber-950/50 px-2 py-0.5 rounded">Mobile</span>
               </div>
-              <div className="text-2xl font-bold text-slate-900 font-mono">
+              <div className="text-2xl font-bold text-slate-900 dark:text-slate-100 font-mono">
                 Rs. {accountBalances.jazzCash.toLocaleString()}
               </div>
-              <div className="text-xs text-slate-500 font-medium mt-1.5">0300-1234567 (Chaudhry H.)</div>
+              <div className="text-xs text-slate-500 dark:text-slate-400 font-medium mt-1.5">0300-1234567 (Chaudhry H.)</div>
             </div>
 
-            <div className="p-4 rounded-xl bg-teal-50/60 border border-teal-100/90 shadow-2xs">
-              <div className="flex items-center justify-between text-xs text-slate-500 mb-1.5">
-                <span className="font-semibold text-slate-700">EasyPaisa Digital Wallet</span>
-                <span className="text-[11px] text-teal-700 font-bold uppercase tracking-wider bg-teal-100/60 px-2 py-0.5 rounded">Mobile</span>
+            <div className="p-4 rounded-xl bg-teal-50/60 dark:bg-teal-950/20 border border-teal-100/90 dark:border-teal-900/40 shadow-2xs">
+              <div className="flex items-center justify-between text-xs text-slate-500 dark:text-slate-400 mb-1.5">
+                <span className="font-semibold text-slate-700 dark:text-slate-300">EasyPaisa Digital Wallet</span>
+                <span className="text-[11px] text-teal-700 dark:text-teal-400 font-bold uppercase tracking-wider bg-teal-100/60 dark:bg-teal-950/50 px-2 py-0.5 rounded">Mobile</span>
               </div>
-              <div className="text-2xl font-bold text-slate-900 font-mono">
+              <div className="text-2xl font-bold text-slate-900 dark:text-slate-100 font-mono">
                 Rs. {accountBalances.easyPaisa.toLocaleString()}
               </div>
-              <div className="text-xs text-slate-500 font-medium mt-1.5">0345-7654321 (Usama Ali)</div>
+              <div className="text-xs text-slate-500 dark:text-slate-400 font-medium mt-1.5">0345-7654321 (Usama Ali)</div>
             </div>
           </div>
         </div>
 
         {/* 7-Day Trend Chart */}
-        <div className="bg-white rounded-xl border border-slate-200/90 p-5 md:p-6 shadow-2xs flex flex-col justify-between">
+        <div className="bg-white dark:bg-[#0D1829] rounded-xl border border-slate-200/90 dark:border-slate-800 p-5 md:p-6 shadow-2xs flex flex-col justify-between">
           <CashFlowTrendChart height={190} />
-          <div className="pt-3 border-t border-slate-100 flex items-center justify-between text-xs text-slate-500 font-medium">
+          <div className="pt-3 border-t border-slate-100 dark:border-slate-800 flex items-center justify-between text-xs text-slate-500 dark:text-slate-400 font-medium">
             <span>Daily target: Rs. 35,000</span>
-            <span className="text-emerald-700 font-semibold bg-emerald-50 px-2.5 py-1 rounded-md">Healthy Flow</span>
+            <span className="text-emerald-700 dark:text-emerald-400 font-semibold bg-emerald-50 dark:bg-emerald-950/50 px-2.5 py-1 rounded-md">Healthy Flow</span>
           </div>
         </div>
       </div>
 
       {/* Sub-Navigation Tabs */}
-      <div className="flex items-center gap-2 border-b border-slate-200 pb-2.5">
+      <div className="flex items-center gap-2 border-b border-slate-200 dark:border-slate-800 pb-2.5">
         {[
           { key: '', label: 'All Transactions' },
           { key: 'cash-in', label: 'Cash In' },
@@ -253,7 +253,7 @@ export const CashManagementView: React.FC = () => {
             className={`px-3.5 py-2 rounded-lg text-xs font-semibold cursor-pointer transition-all ${
               currentTab === tab.key
                 ? 'bg-[#1473E6] text-white shadow-2xs'
-                : 'text-slate-600 hover:bg-slate-100 hover:text-slate-900'
+                : 'text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 hover:text-slate-900 dark:hover:text-slate-100'
             }`}
           >
             {tab.label}

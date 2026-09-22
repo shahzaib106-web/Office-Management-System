@@ -184,62 +184,62 @@ export const DashboardView: React.FC = () => {
           </div>
 
           <div className="space-y-3">
-            <div className="flex items-center justify-between p-3.5 rounded-xl bg-emerald-50/70 border border-emerald-100/90 shadow-2xs">
+            <div className="flex items-center justify-between p-3.5 rounded-xl bg-emerald-50/70 dark:bg-emerald-950/20 border border-emerald-100/90 dark:border-emerald-900/40 shadow-2xs">
               <div className="flex items-center gap-3">
                 <div className="w-8 h-8 rounded-lg bg-emerald-500 text-white flex items-center justify-center font-bold text-sm shadow-2xs">
                   ₨
                 </div>
                 <div>
-                  <div className="font-bold text-slate-900 text-sm">Cash in Office (Drawer)</div>
-                  <div className="text-xs text-slate-500 font-medium">Physical Register Sahiwal</div>
+                  <div className="font-bold text-slate-900 dark:text-slate-100 text-sm">Cash in Office (Drawer)</div>
+                  <div className="text-xs text-slate-500 dark:text-slate-400 font-medium">Physical Register Sahiwal</div>
                 </div>
               </div>
-              <span className="font-bold text-emerald-700 text-base font-mono">
+              <span className="font-bold text-emerald-700 dark:text-emerald-400 text-base font-mono">
                 Rs. {accountBalances.cashOffice.toLocaleString()}
               </span>
             </div>
 
-            <div className="flex items-center justify-between p-3.5 rounded-xl bg-blue-50/70 border border-blue-100/90 shadow-2xs">
+            <div className="flex items-center justify-between p-3.5 rounded-xl bg-blue-50/70 dark:bg-blue-950/20 border border-blue-100/90 dark:border-blue-900/40 shadow-2xs">
               <div className="flex items-center gap-3">
                 <div className="w-8 h-8 rounded-lg bg-blue-600 text-white flex items-center justify-center font-bold text-xs shadow-2xs">
                   HBL
                 </div>
                 <div>
-                  <div className="font-bold text-slate-900 text-sm">HBL Bank Current Account</div>
-                  <div className="text-xs text-slate-500 font-medium">Title: CH Composing & Tax</div>
+                  <div className="font-bold text-slate-900 dark:text-slate-100 text-sm">HBL Bank Current Account</div>
+                  <div className="text-xs text-slate-500 dark:text-slate-400 font-medium">Title: CH Composing & Tax</div>
                 </div>
               </div>
-              <span className="font-bold text-blue-700 text-base font-mono">
+              <span className="font-bold text-blue-700 dark:text-blue-400 text-base font-mono">
                 Rs. {accountBalances.bankAccount.toLocaleString()}
               </span>
             </div>
 
-            <div className="flex items-center justify-between p-3.5 rounded-xl bg-amber-50/70 border border-amber-100/90 shadow-2xs">
+            <div className="flex items-center justify-between p-3.5 rounded-xl bg-amber-50/70 dark:bg-amber-950/20 border border-amber-100/90 dark:border-amber-900/40 shadow-2xs">
               <div className="flex items-center gap-3">
                 <div className="w-8 h-8 rounded-lg bg-amber-600 text-white flex items-center justify-center font-bold text-xs shadow-2xs">
                   JC
                 </div>
                 <div>
-                  <div className="font-bold text-slate-900 text-sm">JazzCash Wallet</div>
-                  <div className="text-xs text-slate-500 font-medium">0300-1234567 (Chaudhry H.)</div>
+                  <div className="font-bold text-slate-900 dark:text-slate-100 text-sm">JazzCash Wallet</div>
+                  <div className="text-xs text-slate-500 dark:text-slate-400 font-medium">0300-1234567 (Chaudhry H.)</div>
                 </div>
               </div>
-              <span className="font-bold text-amber-800 text-base font-mono">
+              <span className="font-bold text-amber-800 dark:text-amber-400 text-base font-mono">
                 Rs. {accountBalances.jazzCash.toLocaleString()}
               </span>
             </div>
 
-            <div className="flex items-center justify-between p-3.5 rounded-xl bg-teal-50/70 border border-teal-100/90 shadow-2xs">
+            <div className="flex items-center justify-between p-3.5 rounded-xl bg-teal-50/70 dark:bg-teal-950/20 border border-teal-100/90 dark:border-teal-900/40 shadow-2xs">
               <div className="flex items-center gap-3">
                 <div className="w-8 h-8 rounded-lg bg-teal-600 text-white flex items-center justify-center font-bold text-xs shadow-2xs">
                   EP
                 </div>
                 <div>
-                  <div className="font-bold text-slate-900 text-sm">EasyPaisa Wallet</div>
-                  <div className="text-xs text-slate-500 font-medium">0345-7654321 (Usama Ali)</div>
+                  <div className="font-bold text-slate-900 dark:text-slate-100 text-sm">EasyPaisa Wallet</div>
+                  <div className="text-xs text-slate-500 dark:text-slate-400 font-medium">0345-7654321 (Usama Ali)</div>
                 </div>
               </div>
-              <span className="font-bold text-teal-800 text-base font-mono">
+              <span className="font-bold text-teal-800 dark:text-teal-400 text-base font-mono">
                 Rs. {accountBalances.easyPaisa.toLocaleString()}
               </span>
             </div>
@@ -247,13 +247,13 @@ export const DashboardView: React.FC = () => {
         </div>
 
         {/* Stamp Stock Status & Fast Sale */}
-        <div className="bg-white rounded-xl border border-slate-200/90 p-5 md:p-6 shadow-2xs flex flex-col justify-between">
+        <div className="bg-white dark:bg-[#0D1829] rounded-xl border border-slate-200/90 dark:border-slate-800 p-5 md:p-6 shadow-2xs flex flex-col justify-between">
           <div>
             <div className="flex items-center justify-between mb-3">
-              <h3 className="text-lg font-bold font-heading text-slate-900 tracking-tight">Stamp Inventory Alerts</h3>
+              <h3 className="text-lg font-bold font-heading text-slate-900 dark:text-slate-100 tracking-tight">Stamp Inventory Alerts</h3>
               <button
                 onClick={() => setActiveSection('stamps')}
-                className="text-xs sm:text-sm text-[#1473E6] hover:text-[#0F62C4] hover:underline font-semibold cursor-pointer transition-colors"
+                className="text-xs sm:text-sm text-[#1473E6] dark:text-[#38BDF8] hover:text-[#0F62C4] hover:underline font-semibold cursor-pointer transition-colors"
               >
                 All Stock &rarr;
               </button>
@@ -261,7 +261,7 @@ export const DashboardView: React.FC = () => {
 
             {/* Quick sell buttons */}
             <div className="mb-4">
-              <div className="text-xs uppercase tracking-wider text-slate-500 font-bold mb-2">
+              <div className="text-xs uppercase tracking-wider text-slate-500 dark:text-slate-400 font-bold mb-2">
                 Quick Counter Stamp Sale:
               </div>
               <div className="grid grid-cols-4 gap-2">
@@ -269,10 +269,10 @@ export const DashboardView: React.FC = () => {
                   <button
                     key={den}
                     onClick={() => setIsStampSaleModalOpen(true)}
-                    className="p-2.5 rounded-xl border border-slate-200 hover:border-[#1473E6] hover:bg-blue-50/60 text-center cursor-pointer transition-all active:scale-95 shadow-2xs"
+                    className="p-2.5 rounded-xl border border-slate-200 dark:border-slate-700/80 hover:border-[#1473E6] hover:bg-blue-50/60 dark:hover:bg-slate-800 text-center cursor-pointer transition-all active:scale-95 shadow-2xs"
                   >
-                    <div className="font-bold text-sm text-slate-900 font-mono">Rs.{den}</div>
-                    <div className="text-xs text-[#1473E6] font-bold">Issue</div>
+                    <div className="font-bold text-sm text-slate-900 dark:text-slate-100 font-mono">Rs.{den}</div>
+                    <div className="text-xs text-[#1473E6] dark:text-[#38BDF8] font-bold">Issue</div>
                   </button>
                 ))}
               </div>
@@ -285,16 +285,16 @@ export const DashboardView: React.FC = () => {
                 .map(item => (
                   <div
                     key={item.denomination}
-                    className="p-3 rounded-xl bg-rose-50/70 border border-rose-100 flex items-center justify-between"
+                    className="p-3 rounded-xl bg-rose-50/70 dark:bg-rose-950/20 border border-rose-100 dark:border-rose-900/40 flex items-center justify-between"
                   >
                     <div className="flex items-center gap-2.5">
                       <AlertTriangle className="w-4 h-4 text-rose-500" />
                       <div className="text-sm">
-                        <span className="font-bold text-slate-900 font-mono">Rs. {item.denomination}</span> Stamp Paper
+                        <span className="font-bold text-slate-900 dark:text-slate-100 font-mono">Rs. {item.denomination}</span> Stamp Paper
                       </div>
                     </div>
                     <div className="flex items-center gap-2.5">
-                      <span className="text-xs text-rose-700 font-bold font-mono">{item.remaining} left</span>
+                      <span className="text-xs text-rose-700 dark:text-rose-400 font-bold font-mono">{item.remaining} left</span>
                       <StatusBadge status={item.status} />
                     </div>
                   </div>
@@ -312,13 +312,13 @@ export const DashboardView: React.FC = () => {
         </div>
 
         {/* Tasks & Upcoming Deadlines */}
-        <div className="bg-white rounded-xl border border-slate-200/90 p-5 md:p-6 shadow-2xs flex flex-col justify-between">
+        <div className="bg-white dark:bg-[#0D1829] rounded-xl border border-slate-200/90 dark:border-slate-800 p-5 md:p-6 shadow-2xs flex flex-col justify-between">
           <div>
             <div className="flex items-center justify-between mb-3">
-              <h3 className="text-lg font-bold font-heading text-slate-900 tracking-tight">Urgent Tasks & Deadlines</h3>
+              <h3 className="text-lg font-bold font-heading text-slate-900 dark:text-slate-100 tracking-tight">Urgent Tasks & Deadlines</h3>
               <button
                 onClick={() => setActiveSection('tasks')}
-                className="text-xs sm:text-sm text-[#1473E6] hover:text-[#0F62C4] hover:underline font-semibold cursor-pointer transition-colors"
+                className="text-xs sm:text-sm text-[#1473E6] dark:text-[#38BDF8] hover:text-[#0F62C4] hover:underline font-semibold cursor-pointer transition-colors"
               >
                 View All &rarr;
               </button>
@@ -331,8 +331,8 @@ export const DashboardView: React.FC = () => {
                   onClick={() => toggleTaskStatus(task.id)}
                   className={`p-3 rounded-xl border flex items-start gap-3 cursor-pointer transition-all ${
                     task.status === 'Completed'
-                      ? 'bg-slate-50 border-slate-200 opacity-60'
-                      : 'bg-white border-slate-200/90 hover:border-blue-300 shadow-2xs'
+                      ? 'bg-slate-50 dark:bg-slate-900/40 border-slate-200 dark:border-slate-800 opacity-60'
+                      : 'bg-white dark:bg-[#111C2E] border-slate-200/90 dark:border-slate-700/80 hover:border-blue-300 dark:hover:border-blue-600 shadow-2xs'
                   }`}
                 >
                   <input
@@ -342,13 +342,13 @@ export const DashboardView: React.FC = () => {
                     className="mt-0.5 rounded text-[#1473E6] cursor-pointer w-4 h-4"
                   />
                   <div className="flex-1 min-w-0">
-                    <div className={`font-semibold text-slate-900 text-sm truncate ${task.status === 'Completed' ? 'line-through text-slate-400' : ''}`}>
+                    <div className={`font-semibold text-slate-900 dark:text-slate-100 text-sm truncate ${task.status === 'Completed' ? 'line-through text-slate-400 dark:text-slate-500' : ''}`}>
                       {task.title}
                     </div>
-                    <div className="flex items-center gap-2 text-xs text-slate-500 font-medium mt-1">
+                    <div className="flex items-center gap-2 text-xs text-slate-500 dark:text-slate-400 font-medium mt-1">
                       <span>Due: {task.dueDate}</span>
                       <span>•</span>
-                      <span className="text-[#1473E6] font-semibold">{task.assignedStaff || task.assignedTo || 'Chamber Staff'}</span>
+                      <span className="text-[#1473E6] dark:text-[#38BDF8] font-semibold">{task.assignedStaff || task.assignedTo || 'Chamber Staff'}</span>
                     </div>
                   </div>
                   <StatusBadge status={task.priority} />
@@ -364,17 +364,17 @@ export const DashboardView: React.FC = () => {
       </div>
 
       {/* Central Transactions Table (Bottom Section) */}
-      <div className="bg-white rounded-xl border border-slate-200/90 p-5 md:p-6 shadow-2xs">
+      <div className="bg-white dark:bg-[#0D1829] rounded-xl border border-slate-200/90 dark:border-slate-800 p-5 md:p-6 shadow-2xs">
         <div className="flex items-center justify-between mb-4">
           <div>
-            <h3 className="text-lg font-bold font-heading text-slate-900 tracking-tight">Recent Ledger Transactions</h3>
-            <p className="text-sm text-slate-500 font-medium mt-0.5">
+            <h3 className="text-lg font-bold font-heading text-slate-900 dark:text-slate-100 tracking-tight">Recent Ledger Transactions</h3>
+            <p className="text-sm text-slate-500 dark:text-slate-400 font-medium mt-0.5">
               Real-time audit entries for cash, bank, receipts, and stamp sales
             </p>
           </div>
           <button
             onClick={() => setActiveSection('cash')}
-            className="text-xs sm:text-sm text-[#1473E6] hover:text-[#0F62C4] hover:underline font-semibold cursor-pointer transition-colors"
+            className="text-xs sm:text-sm text-[#1473E6] dark:text-[#38BDF8] hover:text-[#0F62C4] hover:underline font-semibold cursor-pointer transition-colors"
           >
             Full Central Ledger &rarr;
           </button>
@@ -382,7 +382,7 @@ export const DashboardView: React.FC = () => {
 
         <div className="overflow-x-auto">
           <table className="w-full text-left text-xs">
-            <thead className="bg-slate-50 text-slate-600 font-bold text-xs uppercase tracking-wider border-b border-slate-200">
+            <thead className="bg-slate-50 dark:bg-[#0A1424] text-slate-600 dark:text-slate-400 font-bold text-xs uppercase tracking-wider border-b border-slate-200 dark:border-slate-800">
               <tr>
                 <th className="py-3.5 px-4">Date / Time</th>
                 <th className="py-3.5 px-4">Type</th>
@@ -394,30 +394,30 @@ export const DashboardView: React.FC = () => {
                 <th className="py-3.5 px-4 text-center">Action</th>
               </tr>
             </thead>
-            <tbody className="divide-y divide-slate-100 font-medium text-sm">
+            <tbody className="divide-y divide-slate-100 dark:divide-slate-800 font-medium text-sm">
               {recentTransactions.map(tx => (
-                <tr key={tx.id} className="hover:bg-slate-50/70 transition-colors">
-                  <td className="py-3.5 px-4 text-slate-600 whitespace-nowrap font-mono text-xs">{tx.dateTime}</td>
+                <tr key={tx.id} className="hover:bg-slate-50/70 dark:hover:bg-slate-800/40 transition-colors">
+                  <td className="py-3.5 px-4 text-slate-600 dark:text-slate-400 whitespace-nowrap font-mono text-xs">{tx.dateTime}</td>
                   <td className="py-3.5 px-4 whitespace-nowrap">
                     <span
                       className={`inline-flex items-center px-2.5 py-1 rounded-md text-xs font-bold uppercase tracking-wider ${
                         tx.type === 'IN'
-                          ? 'bg-emerald-50 text-emerald-700 border border-emerald-200'
+                          ? 'bg-emerald-50 dark:bg-emerald-950/40 text-emerald-700 dark:text-emerald-400 border border-emerald-200 dark:border-emerald-800/60'
                           : tx.type === 'OUT'
-                          ? 'bg-rose-50 text-rose-700 border border-rose-200'
-                          : 'bg-blue-50 text-blue-700 border border-blue-200'
+                          ? 'bg-rose-50 dark:bg-rose-950/40 text-rose-700 dark:text-rose-400 border border-rose-200 dark:border-rose-800/60'
+                          : 'bg-blue-50 dark:bg-blue-950/40 text-blue-700 dark:text-blue-400 border border-blue-200 dark:border-blue-800/60'
                       }`}
                     >
                       {tx.type}
                     </span>
                   </td>
-                  <td className="py-3.5 px-4 font-semibold text-slate-900 whitespace-nowrap">
+                  <td className="py-3.5 px-4 font-semibold text-slate-900 dark:text-slate-100 whitespace-nowrap">
                     {tx.clientOrPayee}
                   </td>
-                  <td className="py-3.5 px-4 text-slate-600 whitespace-nowrap">{tx.serviceOrCategory}</td>
-                  <td className="py-3.5 px-4 text-slate-600 capitalize whitespace-nowrap">{tx.account}</td>
+                  <td className="py-3.5 px-4 text-slate-600 dark:text-slate-400 whitespace-nowrap">{tx.serviceOrCategory}</td>
+                  <td className="py-3.5 px-4 text-slate-600 dark:text-slate-400 capitalize whitespace-nowrap">{tx.account}</td>
                   <td className="py-3.5 px-4 text-right font-bold whitespace-nowrap font-mono text-sm">
-                    <span className={tx.type === 'IN' ? 'text-emerald-600' : tx.type === 'OUT' ? 'text-rose-600' : 'text-[#1473E6]'}>
+                    <span className={tx.type === 'IN' ? 'text-emerald-600 dark:text-emerald-400' : tx.type === 'OUT' ? 'text-rose-600 dark:text-rose-400' : 'text-[#1473E6] dark:text-[#38BDF8]'}>
                       {tx.type === 'IN' ? '+' : tx.type === 'OUT' ? '-' : ''} Rs. {tx.amount.toLocaleString()}
                     </span>
                   </td>
@@ -431,7 +431,7 @@ export const DashboardView: React.FC = () => {
                           setSelectedReceiptId(tx.receiptNo || null);
                           setActiveSection('receipts');
                         }}
-                        className="px-2.5 py-1 hover:bg-blue-50 text-[#1473E6] rounded-md font-semibold cursor-pointer inline-flex items-center gap-1.5 transition-colors"
+                        className="px-2.5 py-1 hover:bg-blue-50 dark:hover:bg-slate-800 text-[#1473E6] dark:text-[#38BDF8] rounded-md font-semibold cursor-pointer inline-flex items-center gap-1.5 transition-colors"
                         title="View Receipt"
                       >
                         <Eye className="w-4 h-4" />

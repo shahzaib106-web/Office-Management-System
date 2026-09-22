@@ -27,6 +27,7 @@ import { StampSaleModal } from './components/modals/StampSaleModal';
 import { NewClientModal } from './components/modals/NewClientModal';
 import { PrintReceiptModal } from './components/modals/PrintReceiptModal';
 import { GlobalSearchModal } from './components/modals/GlobalSearchModal';
+import { OfflineIndicator } from './components/common/OfflineIndicator';
 
 const MainLayout: React.FC = () => {
   const { activeSection, selectedReceiptId, setSelectedReceiptId } = useOffice();
@@ -96,7 +97,7 @@ const MainLayout: React.FC = () => {
   };
 
   return (
-    <div className="flex h-screen w-screen overflow-hidden bg-[#F8FAFC] text-[#0F172A] font-sans antialiased select-none">
+    <div className="flex h-screen w-screen overflow-hidden bg-[#F8FAFC] dark:bg-[#070D18] text-[#0F172A] dark:text-[#F1F5F9] font-sans antialiased select-none transition-colors duration-150">
       {/* Dark Navy Sidebar */}
       <Sidebar
         isOpen={isMobileSidebarOpen}
@@ -106,7 +107,7 @@ const MainLayout: React.FC = () => {
       />
 
       {/* Main Content Viewport */}
-      <div className="flex flex-col flex-1 h-full min-w-0 overflow-hidden">
+      <div className="flex flex-col flex-1 h-full min-w-0 overflow-hidden bg-[#F8FAFC] dark:bg-[#070D18]">
         {/* Global Top Bar */}
         <TopBar
           onToggleSidebar={handleToggleSidebar}
@@ -133,6 +134,7 @@ const MainLayout: React.FC = () => {
         receiptId={selectedReceiptId}
         onClose={() => setSelectedReceiptId(null)}
       />
+      <OfflineIndicator />
     </div>
   );
 };

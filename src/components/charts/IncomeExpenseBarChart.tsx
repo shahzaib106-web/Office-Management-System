@@ -76,7 +76,7 @@ export const IncomeExpenseBarChart: React.FC<IncomeExpenseBarChartProps> = ({
               >
                 {/* Tooltip */}
                 {isHovered && (
-                  <div className="absolute -top-12 z-30 bg-[#0D2344] text-white text-[11px] py-1 px-2 rounded-md shadow-md pointer-events-none whitespace-nowrap">
+                  <div className="absolute -top-12 z-30 bg-[#0D2344] dark:bg-[#060D1A] dark:border dark:border-slate-700 text-white text-[11px] py-1 px-2 rounded-md shadow-md pointer-events-none whitespace-nowrap">
                     <div className="font-semibold text-center mb-0.5">{item.label}</div>
                     <div className="text-emerald-400">In: Rs. {item.income.toLocaleString()}</div>
                     <div className="text-rose-400">Out: Rs. {item.expense.toLocaleString()}</div>

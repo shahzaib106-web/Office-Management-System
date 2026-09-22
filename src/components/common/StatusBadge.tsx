@@ -9,7 +9,7 @@ interface StatusBadgeProps {
 export const StatusBadge: React.FC<StatusBadgeProps> = ({ status, size = 'sm', className = '' }) => {
   const norm = status.toLowerCase().trim();
 
-  let styles = 'bg-blue-50 text-blue-700 border-blue-200';
+  let styles = 'bg-blue-50 dark:bg-blue-950/40 text-blue-700 dark:text-blue-400 border-blue-200 dark:border-blue-850';
 
   if (
     norm === 'paid' ||
@@ -20,20 +20,17 @@ export const StatusBadge: React.FC<StatusBadgeProps> = ({ status, size = 'sm', c
     norm === 'online' ||
     norm === 'delivered'
   ) {
-    styles = 'bg-[#ECFDF5] text-[#059669] border-[#A7F3D0]';
+    styles = 'bg-[#ECFDF5] dark:bg-emerald-950/40 text-[#059669] dark:text-emerald-400 border-[#A7F3D0] dark:border-emerald-800/60';
   } else if (
     norm === 'overdue' ||
     norm === 'cancelled' ||
     norm === 'critical' ||
     norm === 'failed' ||
     norm === 'high' ||
-    norm === 'urgent'
-  ) {
-    styles = 'bg-[#FFF1F2] text-[#E11D48] border-[#FECDD3]';
-  } else if (
+    norm === 'urgent' ||
     norm === 'low'
   ) {
-    styles = 'bg-[#FFF1F2] text-[#E11D48] border-[#FECDD3]';
+    styles = 'bg-[#FFF1F2] dark:bg-rose-950/40 text-[#E11D48] dark:text-rose-400 border-[#FECDD3] dark:border-rose-800/60';
   } else if (
     norm === 'partial' ||
     norm === 'pending' ||
@@ -44,7 +41,7 @@ export const StatusBadge: React.FC<StatusBadgeProps> = ({ status, size = 'sm', c
     norm === 'outstanding' ||
     norm === 'unpaid'
   ) {
-    styles = 'bg-[#FFF7ED] text-[#D97706] border-[#FED7AA]';
+    styles = 'bg-[#FFF7ED] dark:bg-amber-950/40 text-[#D97706] dark:text-amber-400 border-[#FED7AA] dark:border-amber-800/60';
   } else if (
     norm === 'in progress' ||
     norm === 'ready to file' ||
@@ -53,15 +50,15 @@ export const StatusBadge: React.FC<StatusBadgeProps> = ({ status, size = 'sm', c
     norm === 'filer' ||
     norm === 'tax consultant'
   ) {
-    styles = 'bg-[#EFF6FF] text-[#2563EB] border-[#BFDBFE]';
+    styles = 'bg-[#EFF6FF] dark:bg-blue-950/40 text-[#2563EB] dark:text-blue-400 border-[#BFDBFE] dark:border-blue-800/60';
   } else if (
     norm === 'admin' ||
     norm === 'stamp vendor' ||
     norm === 'accountant'
   ) {
-    styles = 'bg-[#F5F3FF] text-[#7C3AED] border-[#DDD6FE]';
+    styles = 'bg-[#F5F3FF] dark:bg-purple-950/40 text-[#7C3AED] dark:text-purple-400 border-[#DDD6FE] dark:border-purple-800/60';
   } else if (norm === 'non-filer' || norm === 'offline' || norm === 'inactive') {
-    styles = 'bg-gray-100 text-gray-600 border-gray-200';
+    styles = 'bg-gray-100 dark:bg-slate-800 text-gray-600 dark:text-slate-300 border-gray-200 dark:border-slate-700';
   }
 
   const sizeClasses = size === 'sm' ? 'px-2.5 py-1 text-xs font-bold tracking-wide' : 'px-3 py-1.5 text-xs font-bold tracking-wider';

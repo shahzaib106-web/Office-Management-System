@@ -60,7 +60,7 @@ export const CashFlowTrendChart: React.FC<CashFlowTrendChartProps> = ({
                 className="flex-1 flex flex-col items-center justify-end h-full relative cursor-pointer px-0.5"
               >
                 {isHovered && (
-                  <div className="absolute -top-10 z-30 bg-[#0D2344] text-white text-[10px] py-1 px-1.5 rounded-sm shadow-md pointer-events-none whitespace-nowrap">
+                  <div className="absolute -top-10 z-30 bg-[#0D2344] dark:bg-[#060D1A] dark:border dark:border-slate-700 text-white text-[10px] py-1 px-1.5 rounded-sm shadow-md pointer-events-none whitespace-nowrap">
                     <div className="font-semibold text-center">{item.date}</div>
                     <div className="text-emerald-400">In: Rs. {item.cashIn.toLocaleString()}</div>
                     <div className="text-rose-400">Out: Rs. {item.cashOut.toLocaleString()}</div>

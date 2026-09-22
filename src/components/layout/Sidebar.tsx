@@ -22,6 +22,7 @@ import {
   MessageCircle,
   X
 } from 'lucide-react';
+import { PWAInstallButton } from '../common/PWAInstallButton';
 
 interface SidebarProps {
   isOpen: boolean;
@@ -484,26 +485,29 @@ export const Sidebar: React.FC<SidebarProps> = ({
         </div>
 
         {/* Bottom Support Widget */}
-        <div className="p-3 border-t border-[#142639]">
+        <div className="p-3 border-t border-[#142639] space-y-2">
           {!isCollapsed ? (
-            <div className="bg-[#122538] rounded-xl p-3 border border-slate-700/60 shadow-xs">
-              <div className="flex items-center gap-2.5 text-xs text-slate-300 mb-2">
-                <Headphones className="w-4 h-4 text-[#38BDF8] shrink-0" />
-                <div className="overflow-hidden">
-                  <div className="text-xs text-slate-400 font-medium">Need Help?</div>
-                  <div className="font-bold text-white text-sm font-mono truncate">+92 300 1234567</div>
+            <>
+              <PWAInstallButton variant="sidebar" />
+              <div className="bg-[#122538] rounded-xl p-3 border border-slate-700/60 shadow-xs">
+                <div className="flex items-center gap-2.5 text-xs text-slate-300 mb-2">
+                  <Headphones className="w-4 h-4 text-[#38BDF8] shrink-0" />
+                  <div className="overflow-hidden">
+                    <div className="text-xs text-slate-400 font-medium">Need Help?</div>
+                    <div className="font-bold text-white text-sm font-mono truncate">+92 300 1234567</div>
+                  </div>
                 </div>
+                <a
+                  href="https://wa.me/923001234567"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="w-full flex items-center justify-center gap-2 bg-[#10B981] hover:bg-[#059669] text-white py-2 px-3 rounded-lg text-xs font-bold shadow-xs transition-colors cursor-pointer"
+                >
+                  <MessageCircle className="w-4 h-4 shrink-0" />
+                  <span className="truncate">WhatsApp Support</span>
+                </a>
               </div>
-              <a
-                href="https://wa.me/923001234567"
-                target="_blank"
-                rel="noreferrer"
-                className="w-full flex items-center justify-center gap-2 bg-[#10B981] hover:bg-[#059669] text-white py-2 px-3 rounded-lg text-xs font-bold shadow-xs transition-colors cursor-pointer"
-              >
-                <MessageCircle className="w-4 h-4 shrink-0" />
-                <span className="truncate">WhatsApp Support</span>
-              </a>
-            </div>
+            </>
           ) : (
             <div className="flex flex-col items-center gap-2 py-1">
               <a

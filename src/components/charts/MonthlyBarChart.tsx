@@ -51,7 +51,7 @@ export const MonthlyBarChart: React.FC<MonthlyBarChartProps> = ({
               >
                 {/* Tooltip */}
                 {isHovered && (
-                  <div className="absolute -top-8 z-30 bg-[#0D2344] text-white text-[10px] py-0.5 px-1.5 rounded-sm shadow-sm pointer-events-none whitespace-nowrap">
+                  <div className="absolute -top-8 z-30 bg-[#0D2344] dark:bg-[#060D1A] dark:border dark:border-slate-700 text-white text-[10px] py-0.5 px-1.5 rounded-sm shadow-sm pointer-events-none whitespace-nowrap">
                     {valuePrefix}{item.value.toLocaleString()}
                   </div>
                 )}

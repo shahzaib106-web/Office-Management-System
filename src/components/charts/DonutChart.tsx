@@ -74,10 +74,10 @@ export const DonutChart: React.FC<DonutChartProps> = ({
 
         {/* Center Text */}
         <div className="absolute inset-0 flex flex-col items-center justify-center pointer-events-none text-center px-1">
-          <span className="text-[12px] font-bold text-[#0D2344] leading-tight tracking-tight">
+          <span className="text-[12px] font-bold text-[#0D2344] dark:text-slate-100 leading-tight tracking-tight">
             {hoveredIdx !== null ? `${segments[hoveredIdx].percentage || Math.round((segments[hoveredIdx].value / total) * 100)}%` : centerPrimaryText}
           </span>
-          <span className="text-[9px] text-[#60728D] font-medium leading-none mt-0.5 max-w-[70px] truncate">
+          <span className="text-[9px] text-[#60728D] dark:text-slate-400 font-medium leading-none mt-0.5 max-w-[70px] truncate">
             {hoveredIdx !== null ? segments[hoveredIdx].label : centerSecondaryText}
           </span>
         </div>
@@ -96,7 +96,7 @@ export const DonutChart: React.FC<DonutChartProps> = ({
                 onMouseEnter={() => setHoveredIdx(idx)}
                 onMouseLeave={() => setHoveredIdx(null)}
                 className={`flex items-center justify-between py-0.5 px-1 rounded-sm cursor-pointer transition-colors ${
-                  isHovered ? 'bg-slate-100 font-semibold' : 'text-slate-600'
+                  isHovered ? 'bg-slate-100 dark:bg-slate-800 font-semibold' : 'text-slate-600 dark:text-slate-300'
                 }`}
               >
                 <div className="flex items-center gap-1.5 truncate pr-2">
@@ -106,7 +106,7 @@ export const DonutChart: React.FC<DonutChartProps> = ({
                   ></span>
                   <span className="truncate">{segment.label}</span>
                 </div>
-                <span className="font-bold text-[#0D2344] shrink-0">{percent}%</span>
+                <span className="font-bold text-[#0D2344] dark:text-slate-100 shrink-0">{percent}%</span>
               </div>
             );
           })}

@@ -82,6 +82,8 @@ interface OfficeContextType {
   businessSettings: BusinessSettings;
   
   // UI & Modals
+  isDarkMode: boolean;
+  toggleDarkMode: () => void;
   isSearchModalOpen: boolean;
   setIsSearchModalOpen: (open: boolean) => void;
   isQuickCashInOpen: boolean;
@@ -275,6 +277,25 @@ export const OfficeProvider: React.FC<{ children: React.ReactNode }> = ({ childr
   });
 
   const [businessSettings, setBusinessSettings] = useState<BusinessSettings>(initialBusinessSettings);
+
+  // Dark Mode Theme State
+  const [isDarkMode, setIsDarkMode] = useState<boolean>(() => {
+    const saved = localStorage.getItem('ch_theme');
+    if (saved) return saved === 'dark';
+    return window.matchMedia ? window.matchMedia('(prefers-color-scheme: dark)').matches : false;
+  });
+
+  useEffect(() => {
+    if (isDarkMode) {
+      document.documentElement.classList.add('dark');
+      localStorage.setItem('ch_theme', 'dark');
+    } else {
+      document.documentElement.classList.remove('dark');
+      localStorage.setItem('ch_theme', 'light');
+    }
+  }, [isDarkMode]);
+
+  const toggleDarkMode = () => setIsDarkMode(prev => !prev);
 
   // Modals state
   const [isSearchModalOpen, setIsSearchModalOpen] = useState(false);
@@ -1119,6 +1140,8 @@ export const OfficeProvider: React.FC<{ children: React.ReactNode }> = ({ childr
         systemUsers,
         auditLogs,
         businessSettings,
+        isDarkMode,
+        toggleDarkMode,
         isSearchModalOpen,
         setIsSearchModalOpen,
         isQuickCashInOpen,
