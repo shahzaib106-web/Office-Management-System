@@ -34,7 +34,7 @@ export const PageHeader: React.FC<PageHeaderProps> = ({
       </div>
 
       {/* Main Header Card */}
-      <div className="bg-white dark:bg-[#0D1829] rounded-xl border border-slate-200/90 dark:border-slate-800 p-5 md:p-6 flex flex-col md:flex-row md:items-center justify-between gap-4 shadow-2xs relative overflow-hidden">
+      <div className="bg-white dark:bg-[#0D1829] rounded-xl border border-slate-200/90 dark:border-slate-800 p-4 sm:p-5 md:p-6 flex flex-col md:flex-row md:items-center justify-between gap-4 shadow-2xs relative overflow-hidden">
         {/* Subtle decorative courthouse architectural skyline watermark in background */}
         <div className="absolute right-40 top-0 bottom-0 pointer-events-none opacity-[0.04] dark:opacity-[0.07] flex items-center">
           <svg className="w-96 h-28 text-slate-900 dark:text-slate-100" viewBox="0 0 300 80" fill="currentColor">
@@ -43,22 +43,22 @@ export const PageHeader: React.FC<PageHeaderProps> = ({
         </div>
 
         {/* Left: Icon & Title */}
-        <div className="flex items-center gap-4 z-10">
-          <div className="w-13 h-13 rounded-xl bg-gradient-to-br from-[#0B1B2C] to-[#1473E6] text-white flex items-center justify-center shadow-sm shrink-0">
+        <div className="flex items-center gap-3 sm:gap-4 z-10">
+          <div className="w-11 h-11 sm:w-13 sm:h-13 rounded-xl bg-gradient-to-br from-[#0B1B2C] to-[#1473E6] text-white flex items-center justify-center shadow-sm shrink-0">
             {icon}
           </div>
           <div>
-            <h1 className="text-2xl md:text-3xl font-extrabold font-heading text-slate-900 dark:text-slate-100 tracking-tight leading-tight">
+            <h1 className="text-xl sm:text-2xl md:text-3xl font-extrabold font-heading text-slate-900 dark:text-slate-100 tracking-tight leading-tight">
               {title}
             </h1>
-            <p className="text-sm sm:text-[15px] text-slate-500 dark:text-slate-400 font-normal mt-1 leading-relaxed">
+            <p className="text-xs sm:text-sm md:text-[15px] text-slate-500 dark:text-slate-400 font-normal mt-0.5 sm:mt-1 leading-relaxed">
               {subtitle}
             </p>
           </div>
         </div>
 
         {/* Right side: Quote, courthouse photo banner badge and Location */}
-        <div className="flex items-center gap-3.5 shrink-0 z-10 self-end md:self-auto">
+        <div className="flex flex-wrap items-center gap-2.5 sm:gap-3.5 shrink-0 z-10 w-full md:w-auto justify-start md:justify-end">
           {children}
 
           <div className="hidden lg:flex flex-col items-end pr-3.5 border-r border-slate-200 dark:border-slate-800">
@@ -71,7 +71,7 @@ export const PageHeader: React.FC<PageHeaderProps> = ({
           </div>
 
           {/* Location Badge */}
-          <div className="flex items-center gap-2.5 bg-slate-50 dark:bg-[#0A1322] border border-slate-200/90 dark:border-slate-800 px-3.5 py-2 rounded-xl text-xs font-medium text-slate-800 dark:text-slate-200 shadow-2xs">
+          <div className="hidden sm:flex items-center gap-2.5 bg-slate-50 dark:bg-[#0A1322] border border-slate-200/90 dark:border-slate-800 px-3.5 py-2 rounded-xl text-xs font-medium text-slate-800 dark:text-slate-200 shadow-2xs">
             <div className="w-7 h-7 rounded-lg bg-blue-50 dark:bg-blue-950/60 text-[#1473E6] dark:text-[#38BDF8] flex items-center justify-center shrink-0">
               <MapPin className="w-4 h-4" />
             </div>

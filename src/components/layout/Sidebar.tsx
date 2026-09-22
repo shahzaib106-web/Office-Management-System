@@ -60,17 +60,17 @@ export const Sidebar: React.FC<SidebarProps> = ({
       {isOpen && (
         <div
           onClick={onClose}
-          className="fixed inset-0 bg-black/60 z-40 lg:hidden backdrop-blur-xs transition-opacity"
+          className="fixed inset-0 bg-black/60 z-50 lg:hidden backdrop-blur-xs transition-opacity"
         />
       )}
 
       {/* Sidebar Container */}
       <aside
-        className={`fixed lg:relative top-0 bottom-0 left-0 z-40 h-full bg-[#0B1B2C] text-slate-300 flex flex-col justify-between transition-all duration-300 ease-in-out border-r border-[#15293E] shrink-0 select-none ${
-          isOpen ? 'translate-x-0' : '-translate-x-full lg:translate-x-0'
-        } ${isCollapsed ? 'w-[72px]' : 'w-[265px]'}`}
+        className={`fixed lg:relative top-0 bottom-0 left-0 z-50 h-full bg-[#0B1B2C] text-slate-300 flex flex-col justify-between transition-all duration-300 ease-in-out border-r border-[#15293E] shrink-0 select-none max-lg:overflow-x-hidden lg:overflow-visible ${
+          isOpen ? 'translate-x-0 shadow-2xl' : '-translate-x-full lg:translate-x-0'
+        } w-[285px] max-w-[85vw] ${isCollapsed ? 'lg:w-[72px]' : 'lg:w-[265px]'}`}
       >
-        {/* Modern Edge Toggle Icon Button (Linear / Notion Style) */}
+        {/* Modern Edge Toggle Icon Button (Linear / Notion Style) - Desktop Only */}
         <button
           type="button"
           onClick={onToggleCollapse ? onToggleCollapse : onClose}
@@ -85,20 +85,10 @@ export const Sidebar: React.FC<SidebarProps> = ({
           )}
         </button>
 
-        {/* Mobile Edge Close Button */}
-        <button
-          type="button"
-          onClick={onClose}
-          className="lg:hidden absolute -right-3.5 top-6 z-50 w-7 h-7 rounded-full bg-[#0E2238] border border-[#234160] text-slate-300 hover:text-white shadow-md flex items-center justify-center cursor-pointer"
-          title="Close Navigation"
-        >
-          <ChevronLeft className="w-3.5 h-3.5" />
-        </button>
-
         {/* Top: Branding Header */}
         <div>
-          <div className={`p-4 border-b border-[#142639] flex items-center ${isCollapsed ? 'justify-center' : 'justify-between'}`}>
-            <div className={`flex items-center ${isCollapsed ? 'justify-center' : 'gap-3'}`}>
+          <div className={`p-3.5 sm:p-4 border-b border-[#142639] flex items-center justify-between gap-2.5 ${isCollapsed ? 'lg:justify-center' : ''}`}>
+            <div className={`flex items-center min-w-0 ${isCollapsed ? 'lg:justify-center' : 'gap-2.5 sm:gap-3'}`}>
               {/* CH Gold Shield Emblem */}
               <div
                 title="CH Composing E-Stamp & Tax Advisor"
@@ -112,30 +102,30 @@ export const Sidebar: React.FC<SidebarProps> = ({
                 </div>
               </div>
 
-              {!isCollapsed && (
-                <div className="leading-tight overflow-hidden">
-                  <div className="text-sm font-bold font-heading text-white tracking-wide uppercase truncate">
-                    CH Composing
-                  </div>
-                  <div className="text-xs font-semibold text-amber-400 tracking-wider uppercase truncate">
-                    E-Stamp & Tax Advisor
-                  </div>
-                  <div className="text-xs text-slate-400 mt-0.5 truncate">
-                    Chamber No. 121, Kachahri Sahiwal
-                  </div>
+              {/* Title & Chamber details: always visible on mobile, hidden only when desktop collapsed */}
+              <div className={`leading-tight min-w-0 overflow-hidden ${isCollapsed ? 'hidden lg:hidden' : 'block'}`}>
+                <div className="text-sm font-bold font-heading text-white tracking-wide uppercase truncate">
+                  CH Composing
                 </div>
-              )}
+                <div className="text-[11px] font-semibold text-amber-400 tracking-wider uppercase truncate">
+                  E-Stamp & Tax Advisor
+                </div>
+                <div className="text-[11px] text-slate-400 mt-0.5 truncate">
+                  Chamber No. 121, Kachahri Sahiwal
+                </div>
+              </div>
             </div>
 
-            {/* Mobile close button inside header */}
-            {!isCollapsed && (
-              <button
-                onClick={onClose}
-                className="lg:hidden p-1.5 rounded-md text-slate-400 hover:text-white hover:bg-slate-800"
-              >
-                <X className="w-5 h-5" />
-              </button>
-            )}
+            {/* Mobile Close (X) Button: Strictly positioned inside the top of the opened menu */}
+            <button
+              type="button"
+              onClick={onClose}
+              className="lg:hidden p-2 rounded-xl text-slate-300 hover:text-white hover:bg-[#163354] active:scale-95 transition-all cursor-pointer shrink-0 border border-slate-700/60"
+              title="Close Menu"
+              aria-label="Close navigation menu"
+            >
+              <X className="w-5 h-5" />
+            </button>
           </div>
 
           {/* Navigation Items */}

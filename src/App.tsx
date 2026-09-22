@@ -115,7 +115,7 @@ const MainLayout: React.FC = () => {
         />
 
         {/* Scrollable Workspace with expanded layout */}
-        <main className="flex-1 overflow-y-auto px-5 py-5 sm:px-7 sm:py-6 lg:px-9 lg:py-7">
+        <main className="flex-1 overflow-y-auto px-3.5 py-4 sm:px-6 sm:py-6 lg:px-8 lg:py-7">
           <div className="max-w-[1720px] w-full mx-auto pb-12">
             {renderActiveView()}
           </div>

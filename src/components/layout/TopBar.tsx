@@ -73,19 +73,20 @@ export const TopBar: React.FC<TopBarProps> = ({ onToggleSidebar, isSidebarCollap
   const overdueTax = taxCases.filter(t => t.status === 'Overdue' || t.status === 'Documents Required').length;
 
   return (
-    <header className="sticky top-0 z-30 h-[60px] bg-white dark:bg-[#0B1526] border-b border-slate-200/90 dark:border-slate-800 px-3.5 sm:px-4 flex items-center justify-between shadow-2xs select-none transition-colors duration-150">
-      {/* Left: Sidebar Toggle (Mobile only) & Search Bar */}
+    <header className="sticky top-0 z-30 h-[60px] bg-white dark:bg-[#0B1526] border-b border-slate-200/90 dark:border-slate-800 px-3 sm:px-4 flex items-center justify-between shadow-2xs select-none transition-colors duration-150">
+      {/* Left: Sidebar Toggle (Mobile Hamburger) & Search Bar (Desktop) */}
       <div className="flex items-center gap-2.5 sm:gap-3 flex-1 min-w-0">
         <button
+          id="mobile-sidebar-hamburger-btn"
           onClick={onToggleSidebar}
-          className="lg:hidden p-2 rounded-xl text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors cursor-pointer border border-transparent hover:border-slate-200 dark:hover:border-slate-700 shrink-0"
+          className="lg:hidden p-2 rounded-xl text-slate-700 dark:text-slate-200 hover:text-slate-900 dark:hover:text-white hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors cursor-pointer border border-transparent hover:border-slate-200 dark:hover:border-slate-700 shrink-0"
           title="Open Navigation Menu"
           aria-label="Toggle navigation"
         >
           <Menu className="w-5 h-5" />
         </button>
 
-        {/* Global Search Input - Reduced when sidebar is open to prevent collision with Chamber 121 active pill */}
+        {/* Global Search Input - Hidden on mobile view, shown on sm+ */}
         <div
           onClick={() => setIsSearchModalOpen(true)}
           className={`relative w-full hidden sm:flex items-center cursor-pointer group transition-all duration-200 ${
@@ -106,9 +107,9 @@ export const TopBar: React.FC<TopBarProps> = ({ onToggleSidebar, isSidebarCollap
         </div>
       </div>
 
-      {/* Right Controls */}
-      <div className="flex items-center gap-2 sm:gap-2.5 md:gap-3 shrink-0">
-        {/* Chamber Status Pill - Guaranteed collision-free with shrink-0 and whitespace-nowrap */}
+      {/* Right Controls: Dark Theme Toggle, Notifications, and Profile Section on the right-hand side */}
+      <div className="flex items-center gap-1 sm:gap-2 md:gap-2.5 shrink-0">
+        {/* Chamber Status Pill - Hidden on mobile */}
         <div className="hidden sm:flex items-center gap-1.5 md:gap-2 bg-emerald-50 dark:bg-emerald-950/40 border border-emerald-200 dark:border-emerald-800/60 px-2.5 md:px-3 py-1.5 rounded-full text-xs font-semibold text-emerald-800 dark:text-emerald-300 shadow-2xs shrink-0 whitespace-nowrap">
           <span className="relative flex h-2 w-2 shrink-0">
             <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
@@ -117,7 +118,7 @@ export const TopBar: React.FC<TopBarProps> = ({ onToggleSidebar, isSidebarCollap
           <span className="truncate">Chamber 121 • Active</span>
         </div>
 
-        {/* Date Display Pill */}
+        {/* Date Display Pill - Hidden on mobile */}
         <div className={`items-center gap-2 bg-slate-50 dark:bg-[#0A1424] border border-slate-200 dark:border-slate-700/80 px-3 py-1.5 rounded-xl text-xs font-semibold text-slate-700 dark:text-slate-300 shadow-2xs shrink-0 whitespace-nowrap ${
           isSidebarCollapsed ? 'hidden md:flex' : 'hidden xl:flex'
         }`}>
@@ -125,25 +126,39 @@ export const TopBar: React.FC<TopBarProps> = ({ onToggleSidebar, isSidebarCollap
           <span>Monday, 22 September 2025</span>
         </div>
 
-        {/* PWA Offline & Install Button */}
-        <PWAInstallButton variant="header" />
+        {/* PWA Offline & Install Button - Hidden on mobile header (available in sidebar) */}
+        <div className="hidden sm:block">
+          <PWAInstallButton variant="header" />
+        </div>
 
-        {/* Notifications Icon with Badge */}
+        {/* 1. Dark Theme Toggle Button */}
+        <button
+          id="theme-toggle-btn"
+          onClick={toggleDarkMode}
+          className="p-2 sm:p-2.5 rounded-xl text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors cursor-pointer shrink-0"
+          title={isDarkMode ? "Switch to Light Mode" : "Switch to Dark Mode"}
+          aria-label={isDarkMode ? "Switch to Light Mode" : "Switch to Dark Mode"}
+        >
+          {isDarkMode ? <Sun className="w-4 h-4 text-amber-400" /> : <Moon className="w-4 h-4 text-slate-600" />}
+        </button>
+
+        {/* 2. Notifications Icon with Badge */}
         <div ref={notifRef} className="relative shrink-0">
           <button
+            id="notifications-btn"
             onClick={() => setIsNotifOpen(!isNotifOpen)}
-            className="relative p-2.5 rounded-xl text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors cursor-pointer border border-transparent hover:border-slate-200 dark:hover:border-slate-700"
+            className="relative p-2 sm:p-2.5 rounded-xl text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors cursor-pointer border border-transparent hover:border-slate-200 dark:hover:border-slate-700"
             title="Notifications"
           >
             <Bell className="w-4 h-4" />
-            <span className="absolute top-1.5 right-1.5 w-4 h-4 bg-[#F43F5E] text-white text-[10px] font-bold rounded-full flex items-center justify-center border-2 border-white dark:border-[#0B1526] shadow-2xs">
+            <span className="absolute top-1 sm:top-1.5 right-1 sm:right-1.5 w-4 h-4 bg-[#F43F5E] text-white text-[10px] font-bold rounded-full flex items-center justify-center border-2 border-white dark:border-[#0B1526] shadow-2xs">
               5
             </span>
           </button>
 
           {/* Notifications Dropdown */}
           {isNotifOpen && (
-            <div className="absolute right-0 mt-2 w-84 bg-white dark:bg-[#0E1A2E] rounded-xl shadow-xl border border-slate-200 dark:border-slate-700 py-2.5 z-50 text-xs">
+            <div className="absolute right-0 mt-2 w-80 sm:w-84 max-w-[calc(100vw-1.5rem)] bg-white dark:bg-[#0E1A2E] rounded-xl shadow-xl border border-slate-200 dark:border-slate-700 py-2.5 z-50 text-xs">
               <div className="px-4 py-2 border-b border-slate-100 dark:border-slate-800 flex items-center justify-between">
                 <span className="font-bold text-sm text-slate-900 dark:text-slate-100">Notifications</span>
                 <span className="text-xs text-[#1473E6] dark:text-[#38BDF8] font-semibold cursor-pointer hover:underline">
@@ -208,21 +223,12 @@ export const TopBar: React.FC<TopBarProps> = ({ onToggleSidebar, isSidebarCollap
           )}
         </div>
 
-        {/* Theme Toggle Button */}
-        <button
-          onClick={toggleDarkMode}
-          className="p-2.5 rounded-xl text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors cursor-pointer shrink-0"
-          title={isDarkMode ? "Switch to Light Mode" : "Switch to Dark Mode"}
-          aria-label={isDarkMode ? "Switch to Light Mode" : "Switch to Dark Mode"}
-        >
-          {isDarkMode ? <Sun className="w-4 h-4 text-amber-400" /> : <Moon className="w-4 h-4 text-slate-600" />}
-        </button>
-
-        {/* User Profile Dropdown */}
+        {/* 3. User Profile Section */}
         <div ref={profileRef} className="relative shrink-0">
           <button
+            id="user-profile-btn"
             onClick={() => setIsProfileOpen(!isProfileOpen)}
-            className="flex items-center gap-2.5 pl-2 pr-2.5 py-1.5 rounded-xl hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors cursor-pointer"
+            className="flex items-center gap-2 sm:gap-2.5 pl-1.5 sm:pl-2 pr-1.5 sm:pr-2.5 py-1.5 rounded-xl hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors cursor-pointer"
           >
             <div className="w-8 h-8 rounded-full bg-[#1473E6] text-white flex items-center justify-center font-bold text-xs shadow-2xs">
               UA
@@ -236,7 +242,7 @@ export const TopBar: React.FC<TopBarProps> = ({ onToggleSidebar, isSidebarCollap
 
           {/* User Menu Dropdown */}
           {isProfileOpen && (
-            <div className="absolute right-0 mt-2 w-56 bg-white dark:bg-[#0E1A2E] rounded-xl shadow-xl border border-slate-200 dark:border-slate-700 py-2 z-50 text-xs">
+            <div className="absolute right-0 mt-2 w-56 max-w-[calc(100vw-1.5rem)] bg-white dark:bg-[#0E1A2E] rounded-xl shadow-xl border border-slate-200 dark:border-slate-700 py-2 z-50 text-xs">
               <div className="px-3.5 py-2.5 border-b border-slate-100 dark:border-slate-800">
                 <div className="font-bold text-sm text-slate-900 dark:text-slate-100">Usama Ali</div>
                 <div className="text-xs text-slate-500 dark:text-slate-400 mt-0.5">usama@ch.com</div>
