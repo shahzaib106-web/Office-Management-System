@@ -1,22 +1,67 @@
 @import "tailwindcss";
 
+@theme {
+  --font-sans: 'DM Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-heading: 'Outfit', sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+  --font-serif: 'Playfair Display', Georgia, serif;
+}
+
 @layer base {
-  html, body {
-    font-family: 'Plus Jakarta Sans', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+  html {
+    font-family: 'DM Sans', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
     color: #0F172A;
     background-color: #F8FAFC;
+    font-size: 16px;
+    letter-spacing: -0.005em;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
   }
 
-  /* Refined Mono for Figures and Codes */
+  body {
+    font-family: 'DM Sans', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    color: #0F172A;
+    background-color: #F8FAFC;
+    line-height: 1.625;
+    letter-spacing: -0.005em;
+  }
+
+  h1, h2, h3, h4, h5, h6, .font-heading {
+    font-family: 'Outfit', sans-serif;
+    letter-spacing: -0.02em;
+    line-height: 1.25;
+  }
+
+  /* Refined Mono for Figures, Currency, CNIC, and Codes */
   .font-mono {
     font-family: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
     font-feature-settings: 'tnum' on, 'zero' on;
+    letter-spacing: -0.015em;
   }
 
   .font-serif {
     font-family: 'Playfair Display', Georgia, serif;
+  }
+
+  /* Improved table and form baseline text */
+  table {
+    line-height: 1.5;
+  }
+
+  table th {
+    font-family: 'Outfit', sans-serif;
+    letter-spacing: 0.04em;
+    line-height: 1.4;
+  }
+
+  table td {
+    letter-spacing: -0.005em;
+    line-height: 1.55;
+  }
+
+  input, textarea, select {
+    letter-spacing: -0.005em;
+    line-height: 1.5;
   }
 }
 

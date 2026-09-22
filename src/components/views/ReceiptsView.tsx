@@ -46,26 +46,26 @@ export const ReceiptsView: React.FC = () => {
     .reduce((acc, r) => acc + r.paidAmount, 0);
 
   return (
-    <div className="space-y-4">
+    <div className="space-y-6">
       {/* Header */}
       <PageHeader
         icon={<Receipt className="w-6 h-6 text-white" />}
         title="Official Payment Receipts"
         subtitle="Permanent digital register for official stamped receipts, client payment proofs, and audit cancellations."
-        breadcrumb={['CH Admin Portal', 'Office Management', 'Receipts']}
+        breadcrumb={['Office Management', 'Receipts']}
         quote="“Official Proof of Every Commercial Exchange”"
       >
         <button
           onClick={() => setIsQuickCashInOpen(true)}
-          className="px-3.5 py-1.5 bg-[#1473E6] hover:bg-[#0F70F5] text-white text-xs font-semibold rounded-lg shadow-xs flex items-center gap-1.5 cursor-pointer transition-colors"
+          className="px-3.5 py-2 bg-[#1473E6] hover:bg-[#0F70F5] text-white text-xs font-semibold rounded-lg shadow-2xs flex items-center gap-1.5 cursor-pointer transition-colors"
         >
-          <Plus className="w-3.5 h-3.5" />
+          <Plus className="w-4 h-4" />
           <span>Issue New Receipt</span>
         </button>
       </PageHeader>
 
       {/* KPI Cards */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3.5">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
         <KpiCard
           label="TOTAL RECEIPTS ISSUED"
           value={totalReceipts}

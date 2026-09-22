@@ -88,27 +88,22 @@ export const TopBar: React.FC<TopBarProps> = ({ onToggleSidebar, isSidebarCollap
           onClick={() => setIsSearchModalOpen(true)}
           className="relative w-full max-w-md hidden sm:flex items-center cursor-pointer group"
         >
-          <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none text-slate-400 group-hover:text-[#1473E6] transition-colors">
+          <div className="absolute inset-y-0 left-0 pl-3.5 flex items-center pointer-events-none text-slate-400 group-hover:text-[#1473E6] transition-colors">
             <Search className="w-4 h-4" />
           </div>
           <input
             type="text"
             readOnly
             placeholder="Search clients, receipts, transactions, CNIC, etc..."
-            className="w-full h-[38px] pl-9 pr-14 bg-slate-50 border border-slate-200 rounded-xl text-xs text-slate-800 placeholder-slate-400 group-hover:border-[#1473E6] group-hover:bg-white transition-all cursor-pointer shadow-2xs font-medium"
+            className="w-full h-10 pl-10 pr-4 bg-slate-50/90 border border-slate-200/90 rounded-xl text-sm text-slate-800 placeholder-slate-400 group-hover:border-[#1473E6] group-hover:bg-white transition-all cursor-pointer shadow-2xs font-medium"
           />
-          <div className="absolute inset-y-0 right-0 pr-2.5 flex items-center pointer-events-none">
-            <kbd className="px-1.5 py-0.5 text-[10px] font-semibold text-slate-500 bg-white border border-slate-200 rounded-md shadow-2xs">
-              Ctrl + K
-            </kbd>
-          </div>
         </div>
       </div>
 
       {/* Right Controls */}
-      <div className="flex items-center gap-2 sm:gap-3">
+      <div className="flex items-center gap-2.5 sm:gap-3.5">
         {/* Chamber Status Pill */}
-        <div className="hidden lg:flex items-center gap-2 bg-emerald-50/80 border border-emerald-200/80 px-2.5 py-1 rounded-full text-[11px] font-semibold text-emerald-800">
+        <div className="hidden lg:flex items-center gap-2 bg-emerald-50 border border-emerald-200 px-3 py-1.5 rounded-full text-xs font-semibold text-emerald-800 shadow-2xs">
           <span className="relative flex h-2 w-2">
             <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
             <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
@@ -117,8 +112,8 @@ export const TopBar: React.FC<TopBarProps> = ({ onToggleSidebar, isSidebarCollap
         </div>
 
         {/* Date Display Pill */}
-        <div className="hidden md:flex items-center gap-2 bg-slate-50 border border-slate-200 px-3 py-1.5 rounded-xl text-xs font-semibold text-slate-700">
-          <Calendar className="w-3.5 h-3.5 text-[#1473E6]" />
+        <div className="hidden md:flex items-center gap-2 bg-slate-50 border border-slate-200 px-3.5 py-1.5 rounded-xl text-xs font-semibold text-slate-700 shadow-2xs">
+          <Calendar className="w-4 h-4 text-[#1473E6]" />
           <span>Monday, 22 September 2025</span>
         </div>
 
@@ -126,40 +121,40 @@ export const TopBar: React.FC<TopBarProps> = ({ onToggleSidebar, isSidebarCollap
         <div ref={notifRef} className="relative">
           <button
             onClick={() => setIsNotifOpen(!isNotifOpen)}
-            className="relative p-2 rounded-xl text-slate-600 hover:text-slate-900 hover:bg-slate-100 transition-colors cursor-pointer border border-transparent hover:border-slate-200"
+            className="relative p-2.5 rounded-xl text-slate-600 hover:text-slate-900 hover:bg-slate-100 transition-colors cursor-pointer border border-transparent hover:border-slate-200"
             title="Notifications"
           >
             <Bell className="w-4 h-4" />
-            <span className="absolute top-1.5 right-1.5 w-4 h-4 bg-[#F43F5E] text-white text-[9px] font-bold rounded-full flex items-center justify-center border-2 border-white shadow-2xs">
+            <span className="absolute top-1.5 right-1.5 w-4 h-4 bg-[#F43F5E] text-white text-[10px] font-bold rounded-full flex items-center justify-center border-2 border-white shadow-2xs">
               5
             </span>
           </button>
 
           {/* Notifications Dropdown */}
           {isNotifOpen && (
-            <div className="absolute right-0 mt-2 w-80 bg-white rounded-xl shadow-xl border border-[#DCE6F1] py-2 z-50 text-xs">
-              <div className="px-3 py-1.5 border-b border-slate-100 flex items-center justify-between">
-                <span className="font-bold text-[#0D2344]">Notifications</span>
-                <span className="text-[10px] text-[#1473E6] font-semibold cursor-pointer hover:underline">
+            <div className="absolute right-0 mt-2 w-84 bg-white rounded-xl shadow-xl border border-slate-200 py-2.5 z-50 text-xs">
+              <div className="px-4 py-2 border-b border-slate-100 flex items-center justify-between">
+                <span className="font-bold text-sm text-slate-900">Notifications</span>
+                <span className="text-xs text-[#1473E6] font-semibold cursor-pointer hover:underline">
                   Mark all as read
                 </span>
               </div>
 
-              <div className="max-h-72 overflow-y-auto divide-y divide-slate-50">
+              <div className="max-h-80 overflow-y-auto divide-y divide-slate-100">
                 <div
                   onClick={() => {
                     setActiveSection('stamps');
                     setIsNotifOpen(false);
                   }}
-                  className="p-3 hover:bg-slate-50 cursor-pointer flex gap-2.5 items-start"
+                  className="p-3.5 hover:bg-slate-50 cursor-pointer flex gap-3 items-start transition-colors"
                 >
                   <AlertTriangle className="w-4 h-4 text-amber-500 shrink-0 mt-0.5" />
                   <div>
-                    <div className="font-semibold text-slate-800">Low Stamp Stock Alert</div>
-                    <div className="text-[11px] text-slate-500">
+                    <div className="font-semibold text-xs text-slate-900">Low Stamp Stock Alert</div>
+                    <div className="text-xs text-slate-500 mt-0.5 leading-relaxed">
                       Rs. 50 and Rs. 5,000 stamps are below minimum reorder levels.
                     </div>
-                    <div className="text-[10px] text-slate-400 mt-1">10 mins ago</div>
+                    <div className="text-[11px] text-slate-400 mt-1 font-medium">10 mins ago</div>
                   </div>
                 </div>
 
@@ -168,15 +163,15 @@ export const TopBar: React.FC<TopBarProps> = ({ onToggleSidebar, isSidebarCollap
                     setActiveSection('tax');
                     setIsNotifOpen(false);
                   }}
-                  className="p-3 hover:bg-slate-50 cursor-pointer flex gap-2.5 items-start"
+                  className="p-3.5 hover:bg-slate-50 cursor-pointer flex gap-3 items-start transition-colors"
                 >
                   <Clock className="w-4 h-4 text-rose-500 shrink-0 mt-0.5" />
                   <div>
-                    <div className="font-semibold text-slate-800">Tax Filing Deadlines</div>
-                    <div className="text-[11px] text-slate-500">
+                    <div className="font-semibold text-xs text-slate-900">Tax Filing Deadlines</div>
+                    <div className="text-xs text-slate-500 mt-0.5 leading-relaxed">
                       Muhammad Ali & Asad Khan return due date is 25 September.
                     </div>
-                    <div className="text-[10px] text-slate-400 mt-1">25 mins ago</div>
+                    <div className="text-[11px] text-slate-400 mt-1 font-medium">25 mins ago</div>
                   </div>
                 </div>
 
@@ -186,15 +181,15 @@ export const TopBar: React.FC<TopBarProps> = ({ onToggleSidebar, isSidebarCollap
                     setActiveSubSection('daily-closing');
                     setIsNotifOpen(false);
                   }}
-                  className="p-3 hover:bg-slate-50 cursor-pointer flex gap-2.5 items-start"
+                  className="p-3.5 hover:bg-slate-50 cursor-pointer flex gap-3 items-start transition-colors"
                 >
                   <CheckCircle2 className="w-4 h-4 text-blue-500 shrink-0 mt-0.5" />
                   <div>
-                    <div className="font-semibold text-slate-800">Daily Cash Closing</div>
-                    <div className="text-[11px] text-slate-500">
+                    <div className="font-semibold text-xs text-slate-900">Daily Cash Closing</div>
+                    <div className="text-xs text-slate-500 mt-0.5 leading-relaxed">
                       Today's expected cash in drawer is Rs. {dailyClosing.expectedCash.toLocaleString()}.
                     </div>
-                    <div className="text-[10px] text-slate-400 mt-1">1 hour ago</div>
+                    <div className="text-[11px] text-slate-400 mt-1 font-medium">1 hour ago</div>
                   </div>
                 </div>
               </div>
@@ -205,7 +200,7 @@ export const TopBar: React.FC<TopBarProps> = ({ onToggleSidebar, isSidebarCollap
         {/* Theme Toggle (Visual) */}
         <button
           onClick={() => setIsDarkMode(!isDarkMode)}
-          className="p-2 rounded-lg text-slate-600 hover:text-[#0D2344] hover:bg-slate-100 transition-colors cursor-pointer"
+          className="p-2.5 rounded-xl text-slate-600 hover:text-slate-900 hover:bg-slate-100 transition-colors cursor-pointer"
           title="Toggle Dark/Light Mode"
         >
           {isDarkMode ? <Sun className="w-4 h-4 text-amber-500" /> : <Moon className="w-4 h-4" />}
@@ -215,25 +210,25 @@ export const TopBar: React.FC<TopBarProps> = ({ onToggleSidebar, isSidebarCollap
         <div ref={profileRef} className="relative">
           <button
             onClick={() => setIsProfileOpen(!isProfileOpen)}
-            className="flex items-center gap-2.5 pl-1.5 pr-2 py-1 rounded-lg hover:bg-slate-100 transition-colors cursor-pointer"
+            className="flex items-center gap-2.5 pl-2 pr-2.5 py-1.5 rounded-xl hover:bg-slate-100 transition-colors cursor-pointer"
           >
-            <div className="w-8 h-8 rounded-full bg-[#1473E6] text-white flex items-center justify-center font-bold text-xs shadow-xs">
+            <div className="w-8 h-8 rounded-full bg-[#1473E6] text-white flex items-center justify-center font-bold text-xs shadow-2xs">
               UA
             </div>
             <div className="hidden sm:block text-left leading-tight">
-              <div className="font-bold text-xs text-[#0D2344]">Usama</div>
-              <div className="text-[10px] font-medium text-[#60728D]">Admin</div>
+              <div className="font-bold text-sm text-slate-900">Usama</div>
+              <div className="text-xs font-semibold text-slate-500">Admin</div>
             </div>
             <ChevronDown className="w-3.5 h-3.5 text-slate-400 hidden sm:block" />
           </button>
 
           {/* User Menu Dropdown */}
           {isProfileOpen && (
-            <div className="absolute right-0 mt-2 w-52 bg-white rounded-xl shadow-xl border border-[#DCE6F1] py-1.5 z-50 text-xs">
-              <div className="px-3 py-2 border-b border-slate-100">
-                <div className="font-bold text-[#0D2344]">Usama Ali</div>
-                <div className="text-[11px] text-slate-500">usama@ch.com</div>
-                <div className="text-[10px] text-emerald-600 font-semibold mt-0.5">Role: Administrator</div>
+            <div className="absolute right-0 mt-2 w-56 bg-white rounded-xl shadow-xl border border-slate-200 py-2 z-50 text-xs">
+              <div className="px-3.5 py-2.5 border-b border-slate-100">
+                <div className="font-bold text-sm text-slate-900">Usama Ali</div>
+                <div className="text-xs text-slate-500 mt-0.5">usama@ch.com</div>
+                <div className="text-xs text-emerald-700 font-semibold mt-1">Role: Administrator</div>
               </div>
 
               <div className="py-1">
@@ -242,9 +237,9 @@ export const TopBar: React.FC<TopBarProps> = ({ onToggleSidebar, isSidebarCollap
                     setActiveSection('users');
                     setIsProfileOpen(false);
                   }}
-                  className="w-full text-left px-3 py-1.5 flex items-center gap-2 text-slate-700 hover:bg-[#EEF6FF] hover:text-[#1473E6] cursor-pointer"
+                  className="w-full text-left px-3.5 py-2 flex items-center gap-2.5 text-sm text-slate-700 hover:bg-blue-50 hover:text-[#1473E6] cursor-pointer font-medium transition-colors"
                 >
-                  <User className="w-3.5 h-3.5" />
+                  <User className="w-4 h-4" />
                   <span>Staff & Roles</span>
                 </button>
 
@@ -253,9 +248,9 @@ export const TopBar: React.FC<TopBarProps> = ({ onToggleSidebar, isSidebarCollap
                     setActiveSection('audit');
                     setIsProfileOpen(false);
                   }}
-                  className="w-full text-left px-3 py-1.5 flex items-center gap-2 text-slate-700 hover:bg-[#EEF6FF] hover:text-[#1473E6] cursor-pointer"
+                  className="w-full text-left px-3.5 py-2 flex items-center gap-2.5 text-sm text-slate-700 hover:bg-blue-50 hover:text-[#1473E6] cursor-pointer font-medium transition-colors"
                 >
-                  <Shield className="w-3.5 h-3.5" />
+                  <Shield className="w-4 h-4" />
                   <span>Audit Logs</span>
                 </button>
 
@@ -264,21 +259,21 @@ export const TopBar: React.FC<TopBarProps> = ({ onToggleSidebar, isSidebarCollap
                     setActiveSection('settings');
                     setIsProfileOpen(false);
                   }}
-                  className="w-full text-left px-3 py-1.5 flex items-center gap-2 text-slate-700 hover:bg-[#EEF6FF] hover:text-[#1473E6] cursor-pointer"
+                  className="w-full text-left px-3.5 py-2 flex items-center gap-2.5 text-sm text-slate-700 hover:bg-blue-50 hover:text-[#1473E6] cursor-pointer font-medium transition-colors"
                 >
-                  <Sliders className="w-3.5 h-3.5" />
+                  <Sliders className="w-4 h-4" />
                   <span>System Settings</span>
                 </button>
               </div>
 
-              <div className="border-t border-slate-100 pt-1">
+              <div className="border-t border-slate-100 pt-1 mt-1">
                 <button
                   onClick={() => {
                     setIsProfileOpen(false);
                   }}
-                  className="w-full text-left px-3 py-1.5 flex items-center gap-2 text-rose-600 hover:bg-rose-50 cursor-pointer font-medium"
+                  className="w-full text-left px-3.5 py-2 flex items-center gap-2.5 text-sm text-rose-600 hover:bg-rose-50 cursor-pointer font-semibold transition-colors"
                 >
-                  <LogOut className="w-3.5 h-3.5" />
+                  <LogOut className="w-4 h-4" />
                   <span>Log Out</span>
                 </button>
               </div>

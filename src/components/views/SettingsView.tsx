@@ -39,17 +39,17 @@ export const SettingsView: React.FC = () => {
   };
 
   return (
-    <div className="space-y-4">
+    <div className="space-y-6">
       {/* Header */}
       <PageHeader
         icon={<Settings className="w-6 h-6 text-white" />}
         title="Office Configuration & Chamber Identity"
         subtitle="Manage Chamber 121 credentials, letterhead headers, connected payment vaults, and system backups."
-        breadcrumb={['CH Admin Portal', 'Office Management', 'Settings']}
+        breadcrumb={['Office Management', 'Settings']}
         quote="“Configured for Precision, Built for Scale”"
       />
 
-      <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 text-xs">
+      <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 text-xs">
         {/* Left 2 Cols: Chamber Profile & Letterhead */}
         <div className="lg:col-span-2 space-y-4">
           <form onSubmit={handleSave} className="bg-white rounded-xl border border-[#DCE6F1] p-5 shadow-xs space-y-4">

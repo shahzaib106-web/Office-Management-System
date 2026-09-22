@@ -71,18 +71,18 @@ export const StaffUsersView: React.FC = () => {
   );
 
   return (
-    <div className="space-y-4">
+    <div className="space-y-6">
       {/* Header */}
       <PageHeader
         icon={<ShieldCheck className="w-6 h-6 text-white" />}
         title="Staff Directory & Role-Based Access Control"
         subtitle="Manage chamber consultants, composing operators, cash drawer limits, and audit rights."
-        breadcrumb={['CH Admin Portal', 'Office Management', 'Staff & Users']}
+        breadcrumb={['Office Management', 'Staff & Users']}
         quote="“Segregation of Duties, Protected Authority”"
       />
 
       {/* KPI Cards */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3.5">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
         <KpiCard
           label="ACTIVE STAFF MEMBERS"
           value={staffList.length}

@@ -84,44 +84,44 @@ export const StampManagementView: React.FC = () => {
   };
 
   return (
-    <div className="space-y-4">
+    <div className="space-y-6">
       {/* Header */}
       <PageHeader
         icon={<FileCheck2 className="w-6 h-6 text-white" />}
         title="Stamp Paper & E-Stamp Vault"
         subtitle="Manage official government stamp paper inventory, purchases from treasury, sales, and audit reconciliation."
-        breadcrumb={['CH Admin Portal', 'Office Management', 'Stamp Management']}
+        breadcrumb={['Office Management', 'Stamp Management']}
         quote="“Official Documents, Certified Integrity”"
       >
-        <div className="flex flex-wrap items-center gap-2">
+        <div className="flex flex-wrap items-center gap-2.5">
           <button
             onClick={() => setIsStampSaleModalOpen(true)}
-            className="px-3.5 py-1.5 bg-[#1473E6] hover:bg-[#0F70F5] text-white text-xs font-semibold rounded-lg shadow-xs flex items-center gap-1.5 cursor-pointer transition-colors"
+            className="px-3.5 py-2 bg-[#1473E6] hover:bg-[#0F70F5] text-white text-xs font-semibold rounded-lg shadow-2xs flex items-center gap-1.5 cursor-pointer transition-colors"
           >
-            <Plus className="w-3.5 h-3.5" />
+            <Plus className="w-4 h-4" />
             <span>Issue / Sell Stamp</span>
           </button>
 
           <button
             onClick={() => setIsPurchaseModalOpen(true)}
-            className="px-3.5 py-1.5 bg-emerald-600 hover:bg-emerald-700 text-white text-xs font-semibold rounded-lg shadow-xs flex items-center gap-1.5 cursor-pointer transition-colors"
+            className="px-3.5 py-2 bg-emerald-600 hover:bg-emerald-700 text-white text-xs font-semibold rounded-lg shadow-2xs flex items-center gap-1.5 cursor-pointer transition-colors"
           >
-            <ShoppingCart className="w-3.5 h-3.5" />
+            <ShoppingCart className="w-4 h-4" />
             <span>Purchase Stock</span>
           </button>
 
           <button
             onClick={() => setIsAdjustModalOpen(true)}
-            className="px-3.5 py-1.5 bg-slate-700 hover:bg-slate-800 text-white text-xs font-semibold rounded-lg shadow-xs flex items-center gap-1.5 cursor-pointer transition-colors"
+            className="px-3.5 py-2 bg-slate-700 hover:bg-slate-800 text-white text-xs font-semibold rounded-lg shadow-2xs flex items-center gap-1.5 cursor-pointer transition-colors"
           >
-            <Sliders className="w-3.5 h-3.5" />
+            <Sliders className="w-4 h-4" />
             <span>Reconcile Stock</span>
           </button>
         </div>
       </PageHeader>
 
       {/* KPI Cards */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3.5">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
         <KpiCard
           label="TOTAL STAMP UNITS IN VAULT"
           value={`${totalStockUnits} Units`}
@@ -164,41 +164,41 @@ export const StampManagementView: React.FC = () => {
       </div>
 
       {/* Monthly Sales Trend & Denomination Overview */}
-      <div className="grid grid-cols-1 lg:grid-cols-3 gap-3.5">
-        <div className="lg:col-span-2 bg-white rounded-xl border border-[#DCE6F1] p-4 shadow-xs">
-          <div className="flex items-center justify-between mb-2">
+      <div className="grid grid-cols-1 lg:grid-cols-3 gap-5">
+        <div className="lg:col-span-2 bg-white rounded-xl border border-slate-200/90 p-5 md:p-6 shadow-2xs">
+          <div className="flex items-center justify-between mb-3">
             <div>
-              <h3 className="text-[13px] font-bold text-[#0D2344]">Monthly Stamp Sales Trend</h3>
-              <p className="text-[11px] text-[#60728D]">Revenue generated from e-stamp counter issuance (PKR)</p>
+              <h3 className="text-base font-bold text-slate-900 tracking-tight">Monthly Stamp Sales Trend</h3>
+              <p className="text-xs text-slate-500 font-medium">Revenue generated from e-stamp counter issuance (PKR)</p>
             </div>
             <span className="text-xs font-bold text-blue-600">Apr - Sep 2025</span>
           </div>
-          <MonthlyBarChart height={150} barColor="#3B82F6" />
+          <MonthlyBarChart height={180} barColor="#3B82F6" />
         </div>
 
         {/* Quick Inventory Health Card */}
-        <div className="bg-white rounded-xl border border-[#DCE6F1] p-4 shadow-xs flex flex-col justify-between">
+        <div className="bg-white rounded-xl border border-slate-200/90 p-5 md:p-6 shadow-2xs flex flex-col justify-between">
           <div>
-            <h3 className="text-[13px] font-bold text-[#0D2344] mb-2">Vault Health Checklist</h3>
-            <div className="space-y-2 text-xs">
-              <div className="flex items-center justify-between p-2 bg-slate-50 rounded-lg">
+            <h3 className="text-base font-bold text-slate-900 mb-3 tracking-tight">Vault Health Checklist</h3>
+            <div className="space-y-2.5 text-xs">
+              <div className="flex items-center justify-between p-2.5 bg-slate-50 rounded-xl border border-slate-100">
                 <span className="text-slate-600">Authorized Vendor:</span>
-                <span className="font-bold text-slate-800">Ch. Hameed (Lic. 142)</span>
+                <span className="font-bold text-slate-900">Ch. Hameed (Lic. 142)</span>
               </div>
-              <div className="flex items-center justify-between p-2 bg-slate-50 rounded-lg">
+              <div className="flex items-center justify-between p-2.5 bg-slate-50 rounded-xl border border-slate-100">
                 <span className="text-slate-600">State Bank Treasury:</span>
-                <span className="font-bold text-emerald-600">Cleared & Linked</span>
+                <span className="font-bold text-emerald-700">Cleared & Linked</span>
               </div>
-              <div className="flex items-center justify-between p-2 bg-slate-50 rounded-lg">
+              <div className="flex items-center justify-between p-2.5 bg-slate-50 rounded-xl border border-slate-100">
                 <span className="text-slate-600">E-Stamp Web Portal:</span>
-                <span className="font-bold text-blue-600">Online & Verified</span>
+                <span className="font-bold text-blue-700">Online & Verified</span>
               </div>
             </div>
           </div>
 
           <button
             onClick={() => setIsStampSaleModalOpen(true)}
-            className="w-full mt-3 py-2 bg-[#1473E6] hover:bg-[#0F70F5] text-white rounded-lg text-xs font-semibold flex items-center justify-center gap-1.5 shadow-xs transition-colors cursor-pointer"
+            className="w-full mt-4 py-2.5 bg-[#1473E6] hover:bg-[#0F70F5] text-white rounded-xl text-xs font-semibold flex items-center justify-center gap-2 shadow-2xs transition-colors cursor-pointer"
           >
             <Plus className="w-4 h-4" />
             <span>Open Quick Issue Window</span>
@@ -207,7 +207,7 @@ export const StampManagementView: React.FC = () => {
       </div>
 
       {/* Sub Tabs */}
-      <div className="flex items-center gap-1 border-b border-[#DCE6F1] pb-2">
+      <div className="flex items-center gap-2 border-b border-slate-200 pb-2.5">
         {[
           { key: 'stock', label: 'Denomination Stock Table' },
           { key: 'movements', label: 'Stamp Movement Ledger' },
@@ -216,9 +216,9 @@ export const StampManagementView: React.FC = () => {
           <button
             key={tab.key}
             onClick={() => setActiveSubSection(tab.key)}
-            className={`px-3 py-1.5 rounded-lg text-xs font-semibold cursor-pointer transition-colors ${
+            className={`px-3.5 py-2 rounded-lg text-xs font-semibold cursor-pointer transition-colors ${
               currentTab === tab.key
-                ? 'bg-[#1473E6] text-white shadow-xs'
+                ? 'bg-[#1473E6] text-white shadow-2xs'
                 : 'text-slate-600 hover:bg-slate-100 hover:text-slate-900'
             }`}
           >

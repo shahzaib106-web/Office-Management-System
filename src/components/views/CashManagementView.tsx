@@ -81,52 +81,52 @@ export const CashManagementView: React.FC = () => {
   const totalBankWallets = accountBalances.bankAccount + accountBalances.jazzCash + accountBalances.easyPaisa;
 
   return (
-    <div className="space-y-4">
+    <div className="space-y-6">
       {/* Page Header */}
       <PageHeader
         icon={<Wallet className="w-6 h-6 text-white" />}
         title="Cash & Treasury Management"
         subtitle="Live multi-account ledger for counter cash, bank deposits, and mobile wallet reconciliations."
-        breadcrumb={['CH Admin Portal', 'Office Management', 'Cash Management']}
+        breadcrumb={['Office Management', 'Cash Management']}
         quote="“Precise Accounting, Total Peace of Mind”"
       >
-        <div className="flex flex-wrap items-center gap-2">
+        <div className="flex flex-wrap items-center gap-2.5">
           <button
             onClick={() => setIsQuickCashInOpen(true)}
-            className="px-3 py-1.5 bg-[#10B981] hover:bg-[#059669] text-white text-xs font-semibold rounded-lg shadow-xs flex items-center gap-1.5 cursor-pointer transition-colors"
+            className="px-3.5 py-2 bg-[#10B981] hover:bg-[#059669] text-white text-xs font-semibold rounded-lg shadow-2xs flex items-center gap-1.5 cursor-pointer transition-colors"
           >
-            <Plus className="w-3.5 h-3.5" />
+            <Plus className="w-4 h-4" />
             <span>Cash In</span>
           </button>
 
           <button
             onClick={() => setIsQuickCashOutOpen(true)}
-            className="px-3 py-1.5 bg-[#F43F5E] hover:bg-[#E11D48] text-white text-xs font-semibold rounded-lg shadow-xs flex items-center gap-1.5 cursor-pointer transition-colors"
+            className="px-3.5 py-2 bg-[#F43F5E] hover:bg-[#E11D48] text-white text-xs font-semibold rounded-lg shadow-2xs flex items-center gap-1.5 cursor-pointer transition-colors"
           >
-            <Minus className="w-3.5 h-3.5" />
+            <Minus className="w-4 h-4" />
             <span>Cash Out</span>
           </button>
 
           <button
             onClick={() => setIsTransferModalOpen(true)}
-            className="px-3 py-1.5 bg-[#3B82F6] hover:bg-[#2563EB] text-white text-xs font-semibold rounded-lg shadow-xs flex items-center gap-1.5 cursor-pointer transition-colors"
+            className="px-3.5 py-2 bg-[#3B82F6] hover:bg-[#2563EB] text-white text-xs font-semibold rounded-lg shadow-2xs flex items-center gap-1.5 cursor-pointer transition-colors"
           >
-            <ArrowRightLeft className="w-3.5 h-3.5" />
+            <ArrowRightLeft className="w-4 h-4" />
             <span>Transfer</span>
           </button>
 
           <button
             onClick={() => setIsCloseDayModalOpen(true)}
-            className="px-3 py-1.5 bg-[#0B1B2C] hover:bg-[#122B42] text-white text-xs font-semibold rounded-lg shadow-xs flex items-center gap-1.5 cursor-pointer transition-colors border border-slate-700"
+            className="px-3.5 py-2 bg-[#0B1B2C] hover:bg-[#122B42] text-white text-xs font-semibold rounded-lg shadow-2xs flex items-center gap-1.5 cursor-pointer transition-colors border border-slate-700"
           >
-            <Lock className="w-3.5 h-3.5" />
+            <Lock className="w-4 h-4" />
             <span>Close Day</span>
           </button>
         </div>
       </PageHeader>
 
       {/* KPI Cards Row */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3.5">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
         <KpiCard
           label="CASH IN OFFICE (REGISTER)"
           value={`Rs. ${accountBalances.cashOffice.toLocaleString()}`}
@@ -169,11 +169,11 @@ export const CashManagementView: React.FC = () => {
       </div>
 
       {/* Account Balances Grid & 7-Day Trend Chart */}
-      <div className="grid grid-cols-1 lg:grid-cols-3 gap-3.5">
+      <div className="grid grid-cols-1 lg:grid-cols-3 gap-5">
         {/* Payment Accounts Detailed Breakdown */}
-        <div className="lg:col-span-2 bg-white rounded-xl border border-slate-200/90 p-4 shadow-2xs">
-          <div className="flex items-center justify-between mb-3">
-            <h3 className="text-[13px] font-bold text-slate-900 tracking-tight">Connected Accounts & Vaults</h3>
+        <div className="lg:col-span-2 bg-white rounded-xl border border-slate-200/90 p-5 md:p-6 shadow-2xs">
+          <div className="flex items-center justify-between mb-4">
+            <h3 className="text-base font-bold text-slate-900 tracking-tight">Connected Accounts & Vaults</h3>
             <button
               onClick={() => setIsTransferModalOpen(true)}
               className="text-xs text-[#1473E6] hover:text-[#0F62C4] hover:underline font-semibold cursor-pointer transition-colors"
@@ -182,65 +182,65 @@ export const CashManagementView: React.FC = () => {
             </button>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-            <div className="p-3 rounded-xl bg-slate-50 border border-slate-200/90 shadow-2xs">
-              <div className="flex items-center justify-between text-xs text-slate-500 mb-1">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div className="p-4 rounded-xl bg-slate-50 border border-slate-200/90 shadow-2xs">
+              <div className="flex items-center justify-between text-xs text-slate-500 mb-1.5">
                 <span className="font-semibold text-slate-700">Office Counter Register</span>
-                <span className="text-[10px] text-emerald-700 font-bold uppercase tracking-wider bg-emerald-100/60 px-1.5 py-0.5 rounded">Ready</span>
+                <span className="text-[11px] text-emerald-700 font-bold uppercase tracking-wider bg-emerald-100/60 px-2 py-0.5 rounded">Ready</span>
               </div>
-              <div className="text-xl font-bold text-slate-900 font-mono">
+              <div className="text-2xl font-bold text-slate-900 font-mono">
                 Rs. {accountBalances.cashOffice.toLocaleString()}
               </div>
-              <div className="text-[11px] text-slate-500 font-medium mt-1">Chamber 121 Cash Drawer</div>
+              <div className="text-xs text-slate-500 font-medium mt-1.5">Chamber 121 Cash Drawer</div>
             </div>
 
-            <div className="p-3 rounded-xl bg-blue-50/60 border border-blue-100/90 shadow-2xs">
-              <div className="flex items-center justify-between text-xs text-slate-500 mb-1">
+            <div className="p-4 rounded-xl bg-blue-50/60 border border-blue-100/90 shadow-2xs">
+              <div className="flex items-center justify-between text-xs text-slate-500 mb-1.5">
                 <span className="font-semibold text-slate-700">HBL Bank Current Account</span>
-                <span className="text-[10px] text-blue-600 font-bold uppercase tracking-wider bg-blue-100/60 px-1.5 py-0.5 rounded">Online</span>
+                <span className="text-[11px] text-blue-600 font-bold uppercase tracking-wider bg-blue-100/60 px-2 py-0.5 rounded">Online</span>
               </div>
-              <div className="text-xl font-bold text-slate-900 font-mono">
+              <div className="text-2xl font-bold text-slate-900 font-mono">
                 Rs. {accountBalances.bankAccount.toLocaleString()}
               </div>
-              <div className="text-[11px] text-slate-500 font-medium mt-1">Title: CH Composing & Tax Advisor</div>
+              <div className="text-xs text-slate-500 font-medium mt-1.5">Title: CH Composing & Tax Advisor</div>
             </div>
 
-            <div className="p-3 rounded-xl bg-amber-50/60 border border-amber-100/90 shadow-2xs">
-              <div className="flex items-center justify-between text-xs text-slate-500 mb-1">
+            <div className="p-4 rounded-xl bg-amber-50/60 border border-amber-100/90 shadow-2xs">
+              <div className="flex items-center justify-between text-xs text-slate-500 mb-1.5">
                 <span className="font-semibold text-slate-700">JazzCash Merchant Wallet</span>
-                <span className="text-[10px] text-amber-700 font-bold uppercase tracking-wider bg-amber-100/60 px-1.5 py-0.5 rounded">Mobile</span>
+                <span className="text-[11px] text-amber-700 font-bold uppercase tracking-wider bg-amber-100/60 px-2 py-0.5 rounded">Mobile</span>
               </div>
-              <div className="text-xl font-bold text-slate-900 font-mono">
+              <div className="text-2xl font-bold text-slate-900 font-mono">
                 Rs. {accountBalances.jazzCash.toLocaleString()}
               </div>
-              <div className="text-[11px] text-slate-500 font-medium mt-1">0300-1234567 (Chaudhry H.)</div>
+              <div className="text-xs text-slate-500 font-medium mt-1.5">0300-1234567 (Chaudhry H.)</div>
             </div>
 
-            <div className="p-3 rounded-xl bg-teal-50/60 border border-teal-100/90 shadow-2xs">
-              <div className="flex items-center justify-between text-xs text-slate-500 mb-1">
+            <div className="p-4 rounded-xl bg-teal-50/60 border border-teal-100/90 shadow-2xs">
+              <div className="flex items-center justify-between text-xs text-slate-500 mb-1.5">
                 <span className="font-semibold text-slate-700">EasyPaisa Digital Wallet</span>
-                <span className="text-[10px] text-teal-700 font-bold uppercase tracking-wider bg-teal-100/60 px-1.5 py-0.5 rounded">Mobile</span>
+                <span className="text-[11px] text-teal-700 font-bold uppercase tracking-wider bg-teal-100/60 px-2 py-0.5 rounded">Mobile</span>
               </div>
-              <div className="text-xl font-bold text-slate-900 font-mono">
+              <div className="text-2xl font-bold text-slate-900 font-mono">
                 Rs. {accountBalances.easyPaisa.toLocaleString()}
               </div>
-              <div className="text-[11px] text-slate-500 font-medium mt-1">0345-7654321 (Usama Ali)</div>
+              <div className="text-xs text-slate-500 font-medium mt-1.5">0345-7654321 (Usama Ali)</div>
             </div>
           </div>
         </div>
 
         {/* 7-Day Trend Chart */}
-        <div className="bg-white rounded-xl border border-slate-200/90 p-4 shadow-2xs flex flex-col justify-between">
-          <CashFlowTrendChart height={170} />
-          <div className="pt-2 border-t border-slate-100 flex items-center justify-between text-[11px] text-slate-500 font-medium">
+        <div className="bg-white rounded-xl border border-slate-200/90 p-5 md:p-6 shadow-2xs flex flex-col justify-between">
+          <CashFlowTrendChart height={190} />
+          <div className="pt-3 border-t border-slate-100 flex items-center justify-between text-xs text-slate-500 font-medium">
             <span>Daily target: Rs. 35,000</span>
-            <span className="text-emerald-700 font-semibold bg-emerald-50 px-2 py-0.5 rounded-md">Healthy Flow</span>
+            <span className="text-emerald-700 font-semibold bg-emerald-50 px-2.5 py-1 rounded-md">Healthy Flow</span>
           </div>
         </div>
       </div>
 
       {/* Sub-Navigation Tabs */}
-      <div className="flex items-center gap-1.5 border-b border-slate-200 pb-2">
+      <div className="flex items-center gap-2 border-b border-slate-200 pb-2.5">
         {[
           { key: '', label: 'All Transactions' },
           { key: 'cash-in', label: 'Cash In' },
@@ -250,7 +250,7 @@ export const CashManagementView: React.FC = () => {
           <button
             key={tab.key}
             onClick={() => setActiveSubSection(tab.key)}
-            className={`px-3 py-1.5 rounded-lg text-xs font-semibold cursor-pointer transition-all ${
+            className={`px-3.5 py-2 rounded-lg text-xs font-semibold cursor-pointer transition-all ${
               currentTab === tab.key
                 ? 'bg-[#1473E6] text-white shadow-2xs'
                 : 'text-slate-600 hover:bg-slate-100 hover:text-slate-900'

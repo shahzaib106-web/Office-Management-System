@@ -64,11 +64,11 @@ export const StatusBadge: React.FC<StatusBadgeProps> = ({ status, size = 'sm', c
     styles = 'bg-gray-100 text-gray-600 border-gray-200';
   }
 
-  const sizeClasses = size === 'sm' ? 'px-2 py-0.5 text-[10px] font-bold tracking-wider' : 'px-2.5 py-1 text-xs font-semibold tracking-wide';
+  const sizeClasses = size === 'sm' ? 'px-2.5 py-1 text-xs font-bold tracking-wide' : 'px-3 py-1.5 text-xs font-bold tracking-wider';
 
   return (
     <span
-      className={`inline-flex items-center justify-center rounded-md border leading-none uppercase whitespace-nowrap select-none ${sizeClasses} ${styles} ${className}`}
+      className={`inline-flex items-center justify-center rounded-lg border leading-tight uppercase whitespace-nowrap select-none ${sizeClasses} ${styles} ${className}`}
     >
       {status}
     </span>

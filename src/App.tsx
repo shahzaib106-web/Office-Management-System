@@ -113,9 +113,9 @@ const MainLayout: React.FC = () => {
           isSidebarCollapsed={isDesktopCollapsed}
         />
 
-        {/* Scrollable Workspace */}
-        <main className="flex-1 overflow-y-auto px-4 py-4 md:px-6 md:py-5">
-          <div className="max-w-7xl mx-auto pb-10">
+        {/* Scrollable Workspace with expanded layout */}
+        <main className="flex-1 overflow-y-auto px-5 py-5 sm:px-7 sm:py-6 lg:px-9 lg:py-7">
+          <div className="max-w-[1720px] w-full mx-auto pb-12">
             {renderActiveView()}
           </div>
         </main>

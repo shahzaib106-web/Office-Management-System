@@ -15,17 +15,17 @@ export const PageHeader: React.FC<PageHeaderProps> = ({
   icon,
   title,
   subtitle,
-  breadcrumb = ['CH Admin Portal', 'Office Management'],
+  breadcrumb = ['Office Management'],
   quote = '“Compliance Today, Growth Tomorrow”',
   children
 }) => {
   return (
     <div className="mb-4">
       {/* Breadcrumb */}
-      <div className="flex items-center gap-1.5 text-[11px] text-slate-500 mb-1.5 font-medium select-none">
+      <div className="flex items-center gap-2 text-xs text-slate-500 mb-2 font-medium select-none">
         {breadcrumb.map((crumb, idx) => (
           <React.Fragment key={crumb}>
-            {idx > 0 && <ChevronRight className="w-3 h-3 text-slate-400" />}
+            {idx > 0 && <ChevronRight className="w-3.5 h-3.5 text-slate-400" />}
             <span className={idx === breadcrumb.length - 1 ? 'text-slate-900 font-semibold' : 'text-slate-500 hover:text-[#1473E6] transition-colors cursor-pointer'}>
               {crumb}
             </span>
@@ -34,7 +34,7 @@ export const PageHeader: React.FC<PageHeaderProps> = ({
       </div>
 
       {/* Main Header Card */}
-      <div className="bg-white rounded-xl border border-slate-200/90 p-4 flex flex-col md:flex-row md:items-center justify-between gap-3 shadow-xs relative overflow-hidden">
+      <div className="bg-white rounded-xl border border-slate-200/90 p-5 md:p-6 flex flex-col md:flex-row md:items-center justify-between gap-4 shadow-2xs relative overflow-hidden">
         {/* Subtle decorative courthouse architectural skyline watermark in background */}
         <div className="absolute right-40 top-0 bottom-0 pointer-events-none opacity-[0.04] flex items-center">
           <svg className="w-96 h-28 text-slate-900" viewBox="0 0 300 80" fill="currentColor">
@@ -43,41 +43,41 @@ export const PageHeader: React.FC<PageHeaderProps> = ({
         </div>
 
         {/* Left: Icon & Title */}
-        <div className="flex items-center gap-3.5 z-10">
-          <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-[#0B1B2C] to-[#1473E6] text-white flex items-center justify-center shadow-sm shrink-0">
+        <div className="flex items-center gap-4 z-10">
+          <div className="w-13 h-13 rounded-xl bg-gradient-to-br from-[#0B1B2C] to-[#1473E6] text-white flex items-center justify-center shadow-sm shrink-0">
             {icon}
           </div>
           <div>
-            <h1 className="text-xl md:text-2xl font-bold text-slate-900 tracking-tight leading-tight">
+            <h1 className="text-2xl md:text-3xl font-extrabold font-heading text-slate-900 tracking-tight leading-tight">
               {title}
             </h1>
-            <p className="text-[12px] text-slate-500 font-medium leading-none mt-1">
+            <p className="text-sm sm:text-[15px] text-slate-500 font-normal mt-1 leading-relaxed">
               {subtitle}
             </p>
           </div>
         </div>
 
         {/* Right side: Quote, courthouse photo banner badge and Location */}
-        <div className="flex items-center gap-3 shrink-0 z-10 self-end md:self-auto">
+        <div className="flex items-center gap-3.5 shrink-0 z-10 self-end md:self-auto">
           {children}
 
-          <div className="hidden lg:flex flex-col items-end pr-3 border-r border-slate-200">
-            <span className="font-serif italic text-[13px] text-[#1473E6] font-semibold leading-tight">
+          <div className="hidden lg:flex flex-col items-end pr-3.5 border-r border-slate-200">
+            <span className="font-serif italic text-sm text-[#1473E6] font-semibold leading-tight">
               {quote}
             </span>
-            <span className="text-[10px] text-slate-400 font-medium tracking-wider uppercase mt-0.5">
+            <span className="text-xs text-slate-400 font-medium tracking-wider uppercase mt-1">
               CH Chamber Services
             </span>
           </div>
 
           {/* Location Badge */}
-          <div className="flex items-center gap-2.5 bg-slate-50 border border-slate-200/90 px-3 py-1.5 rounded-xl text-xs font-medium text-slate-800 shadow-2xs">
-            <div className="w-6 h-6 rounded-lg bg-blue-50 text-[#1473E6] flex items-center justify-center shrink-0">
-              <MapPin className="w-3.5 h-3.5" />
+          <div className="flex items-center gap-2.5 bg-slate-50 border border-slate-200/90 px-3.5 py-2 rounded-xl text-xs font-medium text-slate-800 shadow-2xs">
+            <div className="w-7 h-7 rounded-lg bg-blue-50 text-[#1473E6] flex items-center justify-center shrink-0">
+              <MapPin className="w-4 h-4" />
             </div>
             <div className="leading-tight text-left">
-              <div className="font-bold text-[11px] text-slate-900">Chamber No. 121</div>
-              <div className="text-[10px] text-slate-500 font-medium">Kachahri Sahiwal</div>
+              <div className="font-bold text-xs text-slate-900">Chamber No. 121</div>
+              <div className="text-xs text-slate-500 font-medium">Kachahri Sahiwal</div>
             </div>
           </div>
         </div>

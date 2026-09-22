@@ -34,18 +34,18 @@ export const AuditLogsView: React.FC = () => {
   });
 
   return (
-    <div className="space-y-4">
+    <div className="space-y-6">
       {/* Header */}
       <PageHeader
         icon={<History className="w-6 h-6 text-white" />}
         title="System Audit Trail & Security Logs"
         subtitle="Immutable transaction ledger records, reversal details, timestamps, and staff accountability."
-        breadcrumb={['CH Admin Portal', 'Office Management', 'Audit Logs']}
+        breadcrumb={['Office Management', 'Audit Logs']}
         quote="“Unyielding Compliance, Full Accountability”"
       />
 
       {/* KPI Cards */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3.5">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
         <KpiCard
           label="TOTAL AUDIT ENTRIES"
           value={auditLogs.length}

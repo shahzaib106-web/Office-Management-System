@@ -47,18 +47,18 @@ export const ExpensesView: React.FC = () => {
   const totalExpense = expenseTransactions.reduce((acc, e) => acc + e.amount, 0);
 
   return (
-    <div className="space-y-4">
+    <div className="space-y-6">
       {/* Header */}
       <PageHeader
         icon={<CreditCard className="w-6 h-6 text-white" />}
         title="Office Overhead & Expenses"
         subtitle="Track daily operational costs, chamber rent, electricity bills, legal paper, tea, and client hospitality."
-        breadcrumb={['CH Admin Portal', 'Office Management', 'Expenses']}
+        breadcrumb={['Office Management', 'Expenses']}
         quote="“Lean Expenses, Maximized Profitability”"
       >
         <button
           onClick={() => setIsQuickCashOutOpen(true)}
-          className="px-3.5 py-1.5 bg-[#F43F5E] hover:bg-[#E11D48] text-white text-xs font-semibold rounded-lg shadow-xs flex items-center gap-1.5 cursor-pointer transition-colors"
+          className="px-3.5 py-2 bg-[#F43F5E] hover:bg-[#E11D48] text-white text-xs font-semibold rounded-lg shadow-2xs flex items-center gap-1.5 cursor-pointer transition-colors"
         >
           <Minus className="w-3.5 h-3.5" />
           <span>Record New Expense</span>
@@ -66,7 +66,7 @@ export const ExpensesView: React.FC = () => {
       </PageHeader>
 
       {/* KPI Cards */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3.5">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
         <KpiCard
           label="TOTAL EXPENSES LOGGED"
           value={`Rs. ${totalExpense.toLocaleString()}`}

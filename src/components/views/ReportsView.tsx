@@ -44,18 +44,18 @@ export const ReportsView: React.FC = () => {
   };
 
   return (
-    <div className="space-y-4">
+    <div className="space-y-6">
       {/* Header */}
       <PageHeader
         icon={<BarChart3 className="w-6 h-6 text-white" />}
         title="Financial & Operational Reports"
         subtitle="Audited P&L statements, multi-account cash balances, stamp inventory turnover, and tax compliance metrics."
-        breadcrumb={['CH Admin Portal', 'Office Management', 'Reports']}
+        breadcrumb={['Office Management', 'Reports']}
         quote="“Clarity in Numbers, Confidence in Strategy”"
       >
         <button
           onClick={handlePrint}
-          className="px-3.5 py-1.5 bg-[#1473E6] hover:bg-[#0F70F5] text-white text-xs font-semibold rounded-lg shadow-xs flex items-center gap-1.5 cursor-pointer transition-colors"
+          className="px-3.5 py-2 bg-[#1473E6] hover:bg-[#0F70F5] text-white text-xs font-semibold rounded-lg shadow-2xs flex items-center gap-1.5 cursor-pointer transition-colors"
         >
           <Printer className="w-3.5 h-3.5" />
           <span>Print Statement</span>
@@ -63,7 +63,7 @@ export const ReportsView: React.FC = () => {
       </PageHeader>
 
       {/* KPI Cards */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3.5">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
         <KpiCard
           label="GROSS REVENUE (COLLECTED)"
           value={`Rs. ${totalRevenue.toLocaleString()}`}

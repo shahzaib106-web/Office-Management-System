@@ -113,13 +113,13 @@ export const Sidebar: React.FC<SidebarProps> = ({
 
               {!isCollapsed && (
                 <div className="leading-tight overflow-hidden">
-                  <div className="text-[13px] font-bold text-white tracking-wide uppercase truncate">
+                  <div className="text-sm font-bold font-heading text-white tracking-wide uppercase truncate">
                     CH Composing
                   </div>
-                  <div className="text-[10px] font-semibold text-amber-400 tracking-wider uppercase truncate">
+                  <div className="text-xs font-semibold text-amber-400 tracking-wider uppercase truncate">
                     E-Stamp & Tax Advisor
                   </div>
-                  <div className="text-[9px] text-slate-400 mt-0.5 truncate">
+                  <div className="text-xs text-slate-400 mt-0.5 truncate">
                     Chamber No. 121, Kachahri Sahiwal
                   </div>
                 </div>
@@ -138,7 +138,7 @@ export const Sidebar: React.FC<SidebarProps> = ({
           </div>
 
           {/* Navigation Items */}
-          <nav className={`p-2.5 space-y-1 overflow-y-auto max-h-[calc(100vh-190px)] custom-scrollbar-dark text-[13px] font-medium ${isCollapsed ? 'px-2' : ''}`}>
+          <nav className={`p-2.5 space-y-1 overflow-y-auto max-h-[calc(100vh-190px)] custom-scrollbar-dark text-sm font-medium ${isCollapsed ? 'px-2' : ''}`}>
             {/* Top Level: Office Management (Collapsible Group) */}
             <div>
               {!isCollapsed ? (
@@ -148,7 +148,7 @@ export const Sidebar: React.FC<SidebarProps> = ({
                 >
                   <div className="flex items-center gap-2.5">
                     <Briefcase className="w-4 h-4 text-[#38BDF8]" />
-                    <span className="text-[13px] tracking-wide">Office Management</span>
+                    <span className="text-sm tracking-wide font-heading">Office Management</span>
                   </div>
                   <ChevronDown
                     className={`w-4 h-4 text-slate-300 transition-transform duration-200 ${
@@ -487,18 +487,18 @@ export const Sidebar: React.FC<SidebarProps> = ({
         <div className="p-3 border-t border-[#142639]">
           {!isCollapsed ? (
             <div className="bg-[#122538] rounded-xl p-3 border border-slate-700/60 shadow-xs">
-              <div className="flex items-center gap-2 text-xs text-slate-300 mb-2">
+              <div className="flex items-center gap-2.5 text-xs text-slate-300 mb-2">
                 <Headphones className="w-4 h-4 text-[#38BDF8] shrink-0" />
                 <div className="overflow-hidden">
-                  <div className="text-[10px] text-slate-400">Need Help?</div>
-                  <div className="font-bold text-white text-[12px] truncate">+92 300 1234567</div>
+                  <div className="text-xs text-slate-400 font-medium">Need Help?</div>
+                  <div className="font-bold text-white text-sm font-mono truncate">+92 300 1234567</div>
                 </div>
               </div>
               <a
                 href="https://wa.me/923001234567"
                 target="_blank"
                 rel="noreferrer"
-                className="w-full flex items-center justify-center gap-2 bg-[#10B981] hover:bg-[#059669] text-white py-1.5 px-3 rounded-lg text-xs font-semibold shadow-xs transition-colors cursor-pointer"
+                className="w-full flex items-center justify-center gap-2 bg-[#10B981] hover:bg-[#059669] text-white py-2 px-3 rounded-lg text-xs font-bold shadow-xs transition-colors cursor-pointer"
               >
                 <MessageCircle className="w-4 h-4 shrink-0" />
                 <span className="truncate">WhatsApp Support</span>
@@ -511,7 +511,7 @@ export const Sidebar: React.FC<SidebarProps> = ({
                 target="_blank"
                 rel="noreferrer"
                 title="WhatsApp Support: +92 300 1234567"
-                className="w-9 h-9 rounded-xl bg-[#10B981] hover:bg-[#059669] text-white flex items-center justify-center shadow-xs transition-colors cursor-pointer"
+                className="w-10 h-10 rounded-xl bg-[#10B981] hover:bg-[#059669] text-white flex items-center justify-center shadow-xs transition-colors cursor-pointer"
               >
                 <MessageCircle className="w-4 h-4" />
               </a>

@@ -67,26 +67,26 @@ export const ClientsView: React.FC = () => {
   ];
 
   return (
-    <div className="space-y-4">
+    <div className="space-y-6">
       {/* Header */}
       <PageHeader
         icon={<Users className="w-6 h-6 text-white" />}
         title="Clients & CRM Directory"
         subtitle="Manage client identities, CNIC, NTN, tax case histories, outstanding balances, and official files."
-        breadcrumb={['CH Admin Portal', 'Office Management', 'Clients & CRM']}
+        breadcrumb={['Office Management', 'Clients & CRM']}
         quote="“Trusted Advisory for Sahiwal's Business Leaders”"
       >
         <button
           onClick={() => setIsNewClientModalOpen(true)}
-          className="px-3.5 py-1.5 bg-[#1473E6] hover:bg-[#0F70F5] text-white text-xs font-semibold rounded-lg shadow-xs flex items-center gap-1.5 cursor-pointer transition-colors"
+          className="px-3.5 py-2 bg-[#1473E6] hover:bg-[#0F70F5] text-white text-xs font-semibold rounded-lg shadow-2xs flex items-center gap-1.5 cursor-pointer transition-colors"
         >
-          <UserPlus className="w-3.5 h-3.5" />
+          <UserPlus className="w-4 h-4" />
           <span>Add New Client</span>
         </button>
       </PageHeader>
 
       {/* KPI Row */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3.5">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
         <KpiCard
           label="REGISTERED CLIENTS"
           value={totalClients}
